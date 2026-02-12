@@ -17,3 +17,18 @@ kibot_*.kicad_pro
 .DS_Store
 /.github/.DS_Store
 /notes/
+sym-lib-table
+
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# dev files #
+#############
+/Calculations/.dir-locals.el

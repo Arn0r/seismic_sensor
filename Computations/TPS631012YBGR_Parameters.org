@@ -1,0 +1,167 @@
+#+title: TPS631013A Parameters
+#+AUTHOR: Arnór Aðalsteinsson
+#+PROPERTY: header-args:jupyter-python :eval yes :session py :kernel pcb-calc :async yes
+
+* Imports
+#+begin_src jupyter-python :session py :async yes :results output
+import matplotlib.pyplot as plt
+import numpy as np
+#+end_src
+
+* Design Methodology
+The following workflow is used for selecting components and verifying the TPS631013A design:
+
+1. Define design requirements (Vin range, Vout, Iout).
+2. Compute duty cycle (boost mode worst-case).
+3. Calculate average inductor current and define target ripple current.
+4. Calculate inductance value for the desired ripple.
+5. Determine peak inductor current and select a saturation current margin (~20%).
+6. Compare with datasheet recommended inductors and select a part.
+7. Repeat similar steps for input and output capacitors, using datasheet guidance for values and placement.
+* Design Requirements
+1. Input voltage: 2.6 V to 4.3 V
+2. Output voltage: 3.3 V
+3. Output current: 1 A
+
+#+begin_src jupyter-python :session py :async yes :results none
+Vin = 2.6
+Vout = 3.3
+Iout = 1
+#+end_src
+
+* Inductor Selection
+** Notes
+- Boost mode worst-case switch current determines critical inductor selection (Minimum Vin used).
+- Peak current includes average plus half the ripple current: $I_{L,peak} = I_{L,avg} + \frac{\Delta I_L}{2}$
+- Saturation margin is chosen 20% higher than $I_{L,peak}$: $I_{sat} = 1.2 \times I_{L,peak}$
+- Lower ripple -> larger inductor, higher efficiency
+- Higher ripple -> smaller inductor, higher stress
+** Duty cycle (Boost)
+$$
+D = \frac{V_{OUT}-V_{IN}}{V_{OUT}}
+$$
+
+#+begin_src jupyter-python :session py :async yes :results output
+D = (Vout - Vin) / Vout
+
+print(f"Duty Cycle: {D:.4f}")
+#+end_src
+
+#+RESULTS:
+: Duty Cycle: 0.2121
+
+** Average Inductor Current
+Worst-case inductor current for buck-boost occurs at minimum $V_{IN}$ (Boost mode worst case):
+
+$$
+I_{L,avg} = \frac{I_{OUT}}{\eta \cdot (1-D)}
+$$
+
+Assuming $\eta = 0.93$ (datasheet derived)
+
+#+begin_src jupyter-python :session py :async yes :results output
+eta = 0.93
+
+I_L_avg = Iout/(eta*(1-D))
+
+print(f"Average Inductor Current = {I_L_avg:.3f} A")
+#+end_src
+
+** Ripple current target
+Ripple current $\Delta I_L$ directly affects:
+1. Peak current / saturation margin
+2. Inductor size and DCR
+3. Switch current stress
+4. Output ripple and EMI
+5. Efficiency
+
+For switching converters $\Delta I_L = 0.2 - 0.4$ of average inductor current is standard choice
+=Lower ripple -> Larger inductor and higher efficiency=
+=Higher ripple -> Smaller inductor and lower efficiency=
+
+Balanced choice: $\Delta I_L = 0.3 I_{L,avg}$
+
+#+begin_src jupyter-python :session py :async yes :results output
+delta_I_L = 0.3 * I_L_avg
+print(f"Ripple current = {delta_I_L:.3f} A")
+#+end_src
+
+#+RESULTS:
+: Ripple current = 0.354 A
+
+** Inductance
+Boost mode:
+$$
+\Delta I_L = \frac{V_{IN} \cdot D}{L\cdot f}
+$$
+Rearrange:
+$$
+L = \frac{V_{IN}\cdot D}{\Delta I_L \cdot f}
+$$
+
+Assuming $f = 2 \text{MHz}$ (datasheet derived)
+
+#+begin_src jupyter-python :session py :async yes :results output
+f= 2e6
+
+L = Vin * D / (delta_I_L * f)
+
+print(f"Inductance = {L:.12f} H")
+#+end_src
+
+Rounding up to nearest standard value ~ 0.82 uH.
+Datasheet provides a list of recommended inductors of 1 uH, which will therefore be the design choice of the inductor.
+#+begin_src jupyter-python :session py :async yes :results none
+L_std = 0.000001
+#+end_src
+
+** Saturation current
+Peak current is calculated by combining the average current with the ripple current
+$$
+I_{L,peak} = I_{L,avg} + \frac{\Delta I_L}{2}
+$$
+
+#+begin_src jupyter-python :session py :async yes :results output
+#I_peak = I_L_avg + delta_I_L/2
+I_peak = Iout / (eta * (1-D)) + (Vin * D) / (2 * f * L_std)
+
+print(f"Peak current = {I_peak:.3f} A")
+#+end_src
+
+Saturation current of the inductor should be 20% higher than the peak current
+#+begin_src jupyter-python :session py :async yes :results output
+I_sat = 1.2 * I_peak
+
+print(f"Saturation current = {I_sat:.3f} A")
+#+end_src
+
+#+RESULTS:
+: Saturation current = 1.803 A
+** Possible Inductors
+List of Recommended Inductors:
+| Inductor Value [µH] | Saturation Current [A] | DCR [mΩ] | Part Number       | Manufacturer | Size (L×W×H mm) |
+|---------------------+------------------------+----------+-------------------+--------------+-----------------|
+|                   1 |                    4.3 |       42 | DFE252012P-R0M=P2 | MuRata       | 2.5 x 2.0 x 1.2 |
+|                   1 |                    4.2 |       43 | HTEK20161T-1R0MSR | Cyntec       | 2.0 x 1.6 x 1.0 |
+|                   1 |                    2.2 |       75 | MAKK2016T1R0M     | Taiyo Yuden  | 2.0 x 1.6 x 1.0 |
+|                   1 |                    2.0 |      144 | DFE18SAN1R0ME0    | MuRata       | 1.6 x 0.8 x 0.8 |
+
+HTEK201611R0MSR from Cyntec is the preferred choice, having low DCR but also balanced sizing.
+* Output Capacitor Selection
+Use a $47 \mu \text{F}$ ceramic capacitor at $V_{out}$, placed as close as possible to the IC pins.
+If using a larger capacitor that is unable to be placed close to the IC, use a smaller ceramic capacitor in parallel to the large capacitor placed as close as possible to VOUT and PGND pins.
+| Capacitor Value [µF] | Voltage Rating [V] | ESR [mΩ] | Part Number       | Manufacturer | Size (Metric) |
+|----------------------+--------------------+----------+-------------------+--------------+---------------|
+|                   47 |                6.3 |       10 | GRM219R60J476ME44 | Murata       | 0805 (2012)   |
+|                   47 |                 10 |       40 | CL10A476MQ8QRN    | Semco        | 0603 (1608)   |
+
+Due to lower ESR, GRM219R60J476ME44 is chosen
+* Input Capacitor Selection
+Use a $22 \mu \text{F}$ X5R or X7R ceramic capacitors placed as close as possible to the IC pins.
+If the input supply is located more than a few inches from the converter, additional bulk capacitance is required. An electrolytic or tantalum capacitor with a value of $47 \mu F$ is a typical choice.
+| Capacitor Value [µF] | Voltage Rating [V] | ESR [mΩ] | Part Number       | Manufacturer | Size (Metric) |
+|----------------------+--------------------+----------+-------------------+--------------+---------------|
+|                   22 |                6.3 |       43 | GRM187R61A226ME15 | Murata       | 0603 (1608)   |
+|                   10 |                 10 |       40 | GRM188R61A106ME69 | Murata       | 0603 (1608)   |
+
+Due to the recommended capacitance of $22 \mu \text{F}$, GRM187R61A226ME15 is chosen.
