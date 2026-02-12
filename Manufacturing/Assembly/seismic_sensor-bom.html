@@ -86,15 +86,15 @@
    <b>Variant</b>: DRAFT<br>
    <b>Revision</b>: + (Unreleased)<br>
    <b>Date</b>: 2025-01-12<br>
-   <b>KiCad Version</b>: 9.0.6+1<br>
+   <b>KiCad Version</b>: 9.0.7+1<br>
  </td>
  <td class="cell-stats">
-   <b>Component Groups</b>: 5<br>
-   <b>Component Count</b>: 10 (per PCB)<br>
+   <b>Component Groups</b>: 11<br>
+   <b>Component Count</b>: 21 (per PCB)<br>
 
-   <b>Fitted Components</b>: 10 (per PCB)<br>
+   <b>Fitted Components</b>: 21 (per PCB)<br>
    <b>Number of PCBs</b>: 1<br>
-   <b>Total Components</b>: 10 (for 1 PCBs)<br>
+   <b>Total Components</b>: 21 (for 1 PCBs)<br>
  </td>
 </tr>
 </table>
@@ -117,8 +117,8 @@
  <tbody>
   <tr id="0">
    <td class="td-gen0">1</td>
-   <td class="td-gen0">5</td>
-   <td class="td-kicad0"><div id="C7"></div><div id="C6"></div><div id="C5"></div><div id="C4"></div><div id="C1"></div>C1 C4 C5 C6 C7</td>
+   <td class="td-gen0">6</td>
+   <td class="td-kicad0"><div id="C10"></div><div id="C9"></div><div id="C6"></div><div id="C5"></div><div id="C4"></div><div id="C1"></div>C1 C4 C5 C6 C9 C10</td>
    <td class="td-kicad0">0.1uF</td>
    <td class="td-empty0">~</td>
    <td class="td-empty0"></td>
@@ -129,9 +129,9 @@
   </tr>
   <tr id="1">
    <td class="td-gen1">2</td>
-   <td class="td-gen1">2</td>
-   <td class="td-kicad1"><div id="C3"></div><div id="C2"></div>C2 C3</td>
-   <td class="td-kicad1">10uF</td>
+   <td class="td-gen1">3</td>
+   <td class="td-kicad1"><div id="L1"></div><div id="C8"></div><div id="C7"></div>C7 C8 L1</td>
+   <td class="td-kicad1">1u</td>
    <td class="td-empty1">~</td>
    <td class="td-empty1"></td>
    <td class="td-user1">Unpolarized capacitor</td>
@@ -141,12 +141,12 @@
   </tr>
   <tr id="2">
    <td class="td-gen0">3</td>
-   <td class="td-gen0">1</td>
-   <td class="td-kicad0"><div id="FB1"></div>FB1</td>
-   <td class="td-kicad0">FerriteBead</td>
+   <td class="td-gen0">2</td>
+   <td class="td-kicad0"><div id="C3"></div><div id="C2"></div>C2 C3</td>
+   <td class="td-kicad0">10uF</td>
    <td class="td-empty0">~</td>
    <td class="td-empty0"></td>
-   <td class="td-user0">Ferrite bead</td>
+   <td class="td-user0">Unpolarized capacitor</td>
    <td class="td-empty0"></td>
    <td class="td-empty0"></td>
    <td class="td-empty0"></td>
@@ -154,10 +154,10 @@
   <tr id="3">
    <td class="td-gen1">4</td>
    <td class="td-gen1">1</td>
-   <td class="td-kicad1"><div id="U2"></div>U2</td>
-   <td class="td-kicad1">ADXL345BCCZ</td>
-   <td class="td-kicad1"><a href="https://www.analog.com/media/en/technical-documentation/data-sheets/ADXL345-EP.pdf">https://www.analog.com/media/en/technical-documentation/data-sheets/ADXL345-EP.pdf</a></td>
-   <td class="td-kicad1">LGA_CC-14-1_ADI</td>
+   <td class="td-kicad1"><div id="C11"></div>C11</td>
+   <td class="td-kicad1">22u</td>
+   <td class="td-kicad1">GRM187R61A226ME15D</td>
+   <td class="td-kicad1">CAP_226ME15D_MUR</td>
    <td class="td-empty1"></td>
    <td class="td-empty1"></td>
    <td class="td-empty1"></td>
@@ -166,11 +166,83 @@
   <tr id="4">
    <td class="td-gen0">5</td>
    <td class="td-gen0">1</td>
-   <td class="td-kicad0"><div id="U1"></div>U1</td>
-   <td class="td-kicad0">STM32U031C6Ux</td>
-   <td class="td-kicad0"><a href="https://www.st.com/resource/en/datasheet/stm32u031c6.pdf">https://www.st.com/resource/en/datasheet/stm32u031c6.pdf</a></td>
-   <td class="td-kicad0">QFN-48-1EP_7x7mm_P0.5mm_EP5.6x5.6mm</td>
-   <td class="td-user0">STMicroelectronics Arm Cortex-M0+ MCU, 32KB flash, 12KB RAM, 39 GPIO, UFQFPN48</td>
+   <td class="td-kicad0"><div id="C12"></div>C12</td>
+   <td class="td-kicad0">47u</td>
+   <td class="td-kicad0">GRM219R60J476ME44D</td>
+   <td class="td-kicad0">CAP_GRM216R_2X1P25_MUR</td>
+   <td class="td-empty0"></td>
+   <td class="td-empty0"></td>
+   <td class="td-empty0"></td>
+   <td class="td-empty0"></td>
+  </tr>
+  <tr id="5">
+   <td class="td-gen1">6</td>
+   <td class="td-gen1">1</td>
+   <td class="td-kicad1"><div id="FB1"></div>FB1</td>
+   <td class="td-kicad1">FerriteBead</td>
+   <td class="td-empty1">~</td>
+   <td class="td-empty1"></td>
+   <td class="td-user1">Ferrite bead</td>
+   <td class="td-empty1"></td>
+   <td class="td-empty1"></td>
+   <td class="td-empty1"></td>
+  </tr>
+  <tr id="6">
+   <td class="td-gen0">7</td>
+   <td class="td-gen0">2</td>
+   <td class="td-kicad0"><div id="J2"></div><div id="J1"></div>J1 J2</td>
+   <td class="td-kicad0">Conn_01x02</td>
+   <td class="td-empty0">~</td>
+   <td class="td-kicad0">JST_EH_B2B-EH-A_1x02_P2.50mm_Vertical</td>
+   <td class="td-user0">Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/) Generic connector, single row, 01x05, script generated (kicad-library-utils/schlib/autogen/connector/)</td>
+   <td class="td-empty0"></td>
+   <td class="td-empty0"></td>
+   <td class="td-empty0"></td>
+  </tr>
+  <tr id="7">
+   <td class="td-gen1">8</td>
+   <td class="td-gen1">2</td>
+   <td class="td-kicad1"><div id="R2"></div><div id="R1"></div>R1 R2</td>
+   <td class="td-kicad1">4k7</td>
+   <td class="td-empty1">~</td>
+   <td class="td-empty1"></td>
+   <td class="td-user1">Resistor</td>
+   <td class="td-empty1"></td>
+   <td class="td-empty1"></td>
+   <td class="td-empty1"></td>
+  </tr>
+  <tr id="8">
+   <td class="td-gen0">9</td>
+   <td class="td-gen0">1</td>
+   <td class="td-kicad0"><div id="U2"></div>U2</td>
+   <td class="td-kicad0">ADXL345BCCZ</td>
+   <td class="td-kicad0"><a href="https://www.analog.com/media/en/technical-documentation/data-sheets/ADXL345-EP.pdf">https://www.analog.com/media/en/technical-documentation/data-sheets/ADXL345-EP.pdf</a></td>
+   <td class="td-kicad0">LGA_CC-14-1_ADI</td>
+   <td class="td-empty0"></td>
+   <td class="td-empty0"></td>
+   <td class="td-empty0"></td>
+   <td class="td-empty0"></td>
+  </tr>
+  <tr id="9">
+   <td class="td-gen1">10</td>
+   <td class="td-gen1">1</td>
+   <td class="td-kicad1"><div id="U1"></div>U1</td>
+   <td class="td-kicad1">STM32U031C6Ux</td>
+   <td class="td-kicad1"><a href="https://www.st.com/resource/en/datasheet/stm32u031c6.pdf">https://www.st.com/resource/en/datasheet/stm32u031c6.pdf</a></td>
+   <td class="td-kicad1">QFN-48-1EP_7x7mm_P0.5mm_EP5.6x5.6mm</td>
+   <td class="td-user1">STMicroelectronics Arm Cortex-M0+ MCU, 32KB flash, 12KB RAM, 39 GPIO, UFQFPN48</td>
+   <td class="td-empty1"></td>
+   <td class="td-empty1"></td>
+   <td class="td-empty1"></td>
+  </tr>
+  <tr id="10">
+   <td class="td-gen0">11</td>
+   <td class="td-gen0">1</td>
+   <td class="td-kicad0"><div id="U3"></div>U3</td>
+   <td class="td-kicad0">TPS631012YBGR</td>
+   <td class="td-kicad0"><a href="https://www.ti.com/lit/gpn/tps631012">https://www.ti.com/lit/gpn/tps631012</a></td>
+   <td class="td-kicad0">DSBGA8-YBG_TEX</td>
+   <td class="td-empty0"></td>
    <td class="td-empty0"></td>
    <td class="td-empty0"></td>
    <td class="td-empty0"></td>
