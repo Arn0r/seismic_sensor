@@ -9,8 +9,8 @@
     <textvar name="COMPANY">SICEMIC</textvar>
     <textvar name="DESIGNER">Arnór Aðalsteinsson</textvar>
     <textvar name="FABRICATION_NOTES"/>
-    <textvar name="GIT_HASH_PCB">433c26a</textvar>
-    <textvar name="GIT_HASH_SCH">a14d5af</textvar>
+    <textvar name="GIT_HASH_PCB">2c18714</textvar>
+    <textvar name="GIT_HASH_SCH">2c18714</textvar>
     <textvar name="GIT_URL">https://github.com/nguyen-v/KDT_Hierarchical_KiBot</textvar>
     <textvar name="PROJECT_NAME">Arctic Seismic Sensor</textvar>
     <textvar name="RELEASE_BODY_1.0.0"/>
@@ -18,8 +18,8 @@
     <textvar name="RELEASE_BODY_1.0.2"/>
     <textvar name="RELEASE_BODY_1.1.0"/>
     <textvar name="RELEASE_BODY_UNRELEASED">Version Unreleased not found.</textvar>
-    <textvar name="RELEASE_DATE">12-Feb-2026</textvar>
-    <textvar name="RELEASE_DATE_NUM">2026-02-12</textvar>
+    <textvar name="RELEASE_DATE">16-May-2026</textvar>
+    <textvar name="RELEASE_DATE_NUM">2026-05-16</textvar>
     <textvar name="RELEASE_TITLE_1.0.0"/>
     <textvar name="RELEASE_TITLE_1.0.1"/>
     <textvar name="RELEASE_TITLE_1.0.2"/>
@@ -63,9 +63,9 @@
     <textvar name="SHEET_NAME_40">......................................</textvar>
     <textvar name="SHEET_NAME_5">IMU</textvar>
     <textvar name="SHEET_NAME_6">Connectors</textvar>
-    <textvar name="SHEET_NAME_7">Power - Sequencing</textvar>
+    <textvar name="SHEET_NAME_7">Holes, Fiducials</textvar>
     <textvar name="SHEET_NAME_8">Revision History</textvar>
-    <textvar name="SHEET_NAME_9">......................................</textvar>
+    <textvar name="SHEET_NAME_9">Power - Sequencing</textvar>
     <textvar name="VARIANT">DRAFT</textvar>
     <sheet number="1" name="/" tstamps="/">
       <title_block>
@@ -123,7 +123,7 @@
     </sheet>
     <sheet number="4" name="/Project Architecture/MCU/" tstamps="/c5103ceb-5325-4a84-a025-9638a412984e/f06537ee-772d-44d3-8c50-e0ba41038c9c/">
       <title_block>
-        <title>Sheet Title A</title>
+        <title>MCU</title>
         <company>SICEMIC</company>
         <rev>+ (Unreleased)</rev>
         <date>Date2</date>
@@ -141,7 +141,7 @@
     </sheet>
     <sheet number="5" name="/Project Architecture/IMU/" tstamps="/c5103ceb-5325-4a84-a025-9638a412984e/e744f3ce-03a6-44a6-8792-1447ef232b9a/">
       <title_block>
-        <title>Sheet Title B</title>
+        <title>IMU</title>
         <company>SICEMIC</company>
         <rev>+ (Unreleased)</rev>
         <date>Date2</date>
@@ -159,9 +159,9 @@
     </sheet>
     <sheet number="6" name="/Project Architecture/Connectors/" tstamps="/c5103ceb-5325-4a84-a025-9638a412984e/55293819-ba92-422a-84cb-5e584cec8606/">
       <title_block>
-        <title/>
-        <company/>
-        <rev/>
+        <title>Connectors</title>
+        <company>SICEMIC</company>
+        <rev>+ (Unreleased)</rev>
         <date/>
         <source>Connectors.kicad_sch</source>
         <comment number="1" value=""/>
@@ -175,13 +175,13 @@
         <comment number="9" value=""/>
       </title_block>
     </sheet>
-    <sheet number="7" name="/Power - Sequencing/" tstamps="/5fb05893-0da3-4f58-a52b-cb6d6f4cb80b/">
+    <sheet number="7" name="/Project Architecture/Holes, Fiducials/" tstamps="/c5103ceb-5325-4a84-a025-9638a412984e/cb817f12-2719-4c91-980f-4ef133f86491/">
       <title_block>
-        <title>Power - Sequencing</title>
+        <title>Holes, Fiducials</title>
         <company>SICEMIC</company>
         <rev>+ (Unreleased)</rev>
         <date>Date2</date>
-        <source>Power - Sequencing.kicad_sch</source>
+        <source>Holes_Fiducials.kicad_sch</source>
         <comment number="1" value=""/>
         <comment number="2" value=""/>
         <comment number="3" value=""/>
@@ -211,35 +211,67 @@
         <comment number="9" value=""/>
       </title_block>
     </sheet>
+    <sheet number="9" name="/Power - Sequencing/" tstamps="/5fb05893-0da3-4f58-a52b-cb6d6f4cb80b/">
+      <title_block>
+        <title>Power - Sequencing</title>
+        <company>SICEMIC</company>
+        <rev>+ (Unreleased)</rev>
+        <date>Date2</date>
+        <source>Power - Sequencing.kicad_sch</source>
+        <comment number="1" value=""/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+        <comment number="5" value=""/>
+        <comment number="6" value=""/>
+        <comment number="7" value=""/>
+        <comment number="8" value=""/>
+        <comment number="9" value=""/>
+      </title_block>
+    </sheet>
   </design>
   <components>
     <comp ref="C3">
       <value>10u</value>
-      <datasheet>~</datasheet>
-      <description>Unpolarized capacitor</description>
+      <footprint>0_capacitor_SMD:C_0603_1608Metric</footprint>
+      <datasheet>https://www.samsungsem.com/resources/file/global/support/product_catalog/MLCC.pdf</datasheet>
+      <description>Multilayer Ceramic Capacitors MLCC - SMD/SMT 10uF+/-10% 10V X5R 1 0603</description>
       <fields>
-        <field name="Footprint"/>
-        <field name="Datasheet">~</field>
-        <field name="Description">Unpolarized capacitor</field>
+        <field name="Config"/>
+        <field name="Manufacturer">Samsung</field>
+        <field name="Manufacturer Part Number">CL10A106KP8NNNC</field>
+        <field name="Footprint">0_capacitor_SMD:C_0603_1608Metric</field>
+        <field name="Datasheet">https://www.samsungsem.com/resources/file/global/support/product_catalog/MLCC.pdf</field>
+        <field name="Description">Multilayer Ceramic Capacitors MLCC - SMD/SMT 10uF+/-10% 10V X5R 1 0603</field>
       </fields>
       <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Config" value=""/>
+      <property name="Manufacturer" value="Samsung"/>
+      <property name="Manufacturer Part Number" value="CL10A106KP8NNNC"/>
       <property name="Sheetname" value="MCU"/>
       <property name="Sheetfile" value="MCU.kicad_sch"/>
       <property name="ki_keywords" value="cap capacitor"/>
       <property name="ki_fp_filters" value="C_*"/>
       <sheetpath names="/Project Architecture/MCU/" tstamps="/c5103ceb-5325-4a84-a025-9638a412984e/f06537ee-772d-44d3-8c50-e0ba41038c9c/"/>
-      <tstamps>95f8b96a-9d62-4d3b-8564-a36a1a948927</tstamps>
+      <tstamps>37cd82de-5a5c-4c15-ac2f-24744b7420cb</tstamps>
     </comp>
     <comp ref="C4">
       <value>0.1u</value>
-      <datasheet>~</datasheet>
+      <footprint>0_capacitor_SMD:C_0402_1005Metric</footprint>
+      <datasheet>https://eu.mouser.com/datasheet/3/508/1/KEM_C1002_X7R_SMD.pdf</datasheet>
       <description>Unpolarized capacitor</description>
       <fields>
-        <field name="Footprint"/>
-        <field name="Datasheet">~</field>
+        <field name="Config"/>
+        <field name="Manufacturer">KEMET</field>
+        <field name="Manufacturer Part Number"> C0402C104K8RAC </field>
+        <field name="Footprint">0_capacitor_SMD:C_0402_1005Metric</field>
+        <field name="Datasheet">https://eu.mouser.com/datasheet/3/508/1/KEM_C1002_X7R_SMD.pdf</field>
         <field name="Description">Unpolarized capacitor</field>
       </fields>
       <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Config" value=""/>
+      <property name="Manufacturer" value="KEMET"/>
+      <property name="Manufacturer Part Number" value=" C0402C104K8RAC "/>
       <property name="Sheetname" value="MCU"/>
       <property name="Sheetfile" value="MCU.kicad_sch"/>
       <property name="ki_keywords" value="cap capacitor"/>
@@ -249,14 +281,21 @@
     </comp>
     <comp ref="C5">
       <value>0.1u</value>
-      <datasheet>~</datasheet>
+      <footprint>0_capacitor_SMD:C_0402_1005Metric</footprint>
+      <datasheet>https://eu.mouser.com/datasheet/3/508/1/KEM_C1002_X7R_SMD.pdf</datasheet>
       <description>Unpolarized capacitor</description>
       <fields>
-        <field name="Footprint"/>
-        <field name="Datasheet">~</field>
+        <field name="Config"/>
+        <field name="Manufacturer">KEMET</field>
+        <field name="Manufacturer Part Number"> C0402C104K8RAC </field>
+        <field name="Footprint">0_capacitor_SMD:C_0402_1005Metric</field>
+        <field name="Datasheet">https://eu.mouser.com/datasheet/3/508/1/KEM_C1002_X7R_SMD.pdf</field>
         <field name="Description">Unpolarized capacitor</field>
       </fields>
       <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Config" value=""/>
+      <property name="Manufacturer" value="KEMET"/>
+      <property name="Manufacturer Part Number" value=" C0402C104K8RAC "/>
       <property name="Sheetname" value="MCU"/>
       <property name="Sheetfile" value="MCU.kicad_sch"/>
       <property name="ki_keywords" value="cap capacitor"/>
@@ -266,14 +305,21 @@
     </comp>
     <comp ref="C6">
       <value>0.1u</value>
-      <datasheet>~</datasheet>
+      <footprint>0_capacitor_SMD:C_0402_1005Metric</footprint>
+      <datasheet>https://eu.mouser.com/datasheet/3/508/1/KEM_C1002_X7R_SMD.pdf</datasheet>
       <description>Unpolarized capacitor</description>
       <fields>
-        <field name="Footprint"/>
-        <field name="Datasheet">~</field>
+        <field name="Config"/>
+        <field name="Manufacturer">KEMET</field>
+        <field name="Manufacturer Part Number"> C0402C104K8RAC </field>
+        <field name="Footprint">0_capacitor_SMD:C_0402_1005Metric</field>
+        <field name="Datasheet">https://eu.mouser.com/datasheet/3/508/1/KEM_C1002_X7R_SMD.pdf</field>
         <field name="Description">Unpolarized capacitor</field>
       </fields>
       <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Config" value=""/>
+      <property name="Manufacturer" value="KEMET"/>
+      <property name="Manufacturer Part Number" value=" C0402C104K8RAC "/>
       <property name="Sheetname" value="MCU"/>
       <property name="Sheetfile" value="MCU.kicad_sch"/>
       <property name="ki_keywords" value="cap capacitor"/>
@@ -283,14 +329,21 @@
     </comp>
     <comp ref="C7">
       <value>1u</value>
-      <datasheet>~</datasheet>
-      <description>Unpolarized capacitor</description>
+      <footprint>0_capacitor_SMD:C_0603_1608Metric</footprint>
+      <datasheet>https://eu.mouser.com/datasheet/3/508/1/upy-gphc_x5r_4v-to-50v.pdf</datasheet>
+      <description>Multilayer Ceramic Capacitors MLCC - SMD/SMT 10V 1uF X5R 0603 10% HI CV</description>
       <fields>
-        <field name="Footprint"/>
-        <field name="Datasheet">~</field>
-        <field name="Description">Unpolarized capacitor</field>
+        <field name="Config"/>
+        <field name="Manufacturer">YAGEO</field>
+        <field name="Manufacturer Part Number">CC0603KRX5R6BB105</field>
+        <field name="Footprint">0_capacitor_SMD:C_0603_1608Metric</field>
+        <field name="Datasheet">https://eu.mouser.com/datasheet/3/508/1/upy-gphc_x5r_4v-to-50v.pdf</field>
+        <field name="Description">Multilayer Ceramic Capacitors MLCC - SMD/SMT 10V 1uF X5R 0603 10% HI CV</field>
       </fields>
       <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Config" value=""/>
+      <property name="Manufacturer" value="YAGEO"/>
+      <property name="Manufacturer Part Number" value="CC0603KRX5R6BB105"/>
       <property name="Sheetname" value="MCU"/>
       <property name="Sheetfile" value="MCU.kicad_sch"/>
       <property name="ki_keywords" value="cap capacitor"/>
@@ -300,31 +353,45 @@
     </comp>
     <comp ref="C8">
       <value>1u</value>
-      <datasheet>~</datasheet>
-      <description>Unpolarized capacitor</description>
+      <footprint>0_capacitor_SMD:C_0603_1608Metric</footprint>
+      <datasheet>https://eu.mouser.com/datasheet/3/508/1/upy-gphc_x5r_4v-to-50v.pdf</datasheet>
+      <description>Multilayer Ceramic Capacitors MLCC - SMD/SMT 10V 1uF X5R 0603 10% HI CV</description>
       <fields>
-        <field name="Footprint"/>
-        <field name="Datasheet">~</field>
-        <field name="Description">Unpolarized capacitor</field>
+        <field name="Config"/>
+        <field name="Manufacturer">YAGEO</field>
+        <field name="Manufacturer Part Number">CC0603KRX5R6BB105</field>
+        <field name="Footprint">0_capacitor_SMD:C_0603_1608Metric</field>
+        <field name="Datasheet">https://eu.mouser.com/datasheet/3/508/1/upy-gphc_x5r_4v-to-50v.pdf</field>
+        <field name="Description">Multilayer Ceramic Capacitors MLCC - SMD/SMT 10V 1uF X5R 0603 10% HI CV</field>
       </fields>
       <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Config" value=""/>
+      <property name="Manufacturer" value="YAGEO"/>
+      <property name="Manufacturer Part Number" value="CC0603KRX5R6BB105"/>
       <property name="Sheetname" value="MCU"/>
       <property name="Sheetfile" value="MCU.kicad_sch"/>
       <property name="ki_keywords" value="cap capacitor"/>
       <property name="ki_fp_filters" value="C_*"/>
       <sheetpath names="/Project Architecture/MCU/" tstamps="/c5103ceb-5325-4a84-a025-9638a412984e/f06537ee-772d-44d3-8c50-e0ba41038c9c/"/>
-      <tstamps>d88e9439-b75c-4095-81a4-ef6495a7795a</tstamps>
+      <tstamps>d382579d-065e-45ce-bd69-e4c96775fb7e</tstamps>
     </comp>
     <comp ref="C9">
       <value>0.1u</value>
-      <datasheet>~</datasheet>
+      <footprint>0_capacitor_SMD:C_0402_1005Metric</footprint>
+      <datasheet>https://eu.mouser.com/datasheet/3/508/1/KEM_C1002_X7R_SMD.pdf</datasheet>
       <description>Unpolarized capacitor</description>
       <fields>
-        <field name="Footprint"/>
-        <field name="Datasheet">~</field>
+        <field name="Config"/>
+        <field name="Manufacturer">KEMET</field>
+        <field name="Manufacturer Part Number"> C0402C104K8RAC </field>
+        <field name="Footprint">0_capacitor_SMD:C_0402_1005Metric</field>
+        <field name="Datasheet">https://eu.mouser.com/datasheet/3/508/1/KEM_C1002_X7R_SMD.pdf</field>
         <field name="Description">Unpolarized capacitor</field>
       </fields>
       <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Config" value=""/>
+      <property name="Manufacturer" value="KEMET"/>
+      <property name="Manufacturer Part Number" value=" C0402C104K8RAC "/>
       <property name="Sheetname" value="MCU"/>
       <property name="Sheetfile" value="MCU.kicad_sch"/>
       <property name="ki_keywords" value="cap capacitor"/>
@@ -334,14 +401,21 @@
     </comp>
     <comp ref="R1">
       <value>4k7</value>
-      <datasheet>~</datasheet>
-      <description>Resistor</description>
+      <footprint>0_resistor_SMD:R_0402_1005Metric</footprint>
+      <datasheet>https://yageogroup.com/content/datasheet/asset/file/PYU-RC_GROUP_51_ROHS_L</datasheet>
+      <description>4.7 kOhms ±1% 0.063W, 1/16W Chip Resistor 0402 (1005 Metric) Moisture Resistant Thick Film</description>
       <fields>
-        <field name="Footprint"/>
-        <field name="Datasheet">~</field>
-        <field name="Description">Resistor</field>
+        <field name="Config"/>
+        <field name="Manufacturer">YAGEO</field>
+        <field name="Manufacturer Part Number">RC0402FR-074K7L</field>
+        <field name="Footprint">0_resistor_SMD:R_0402_1005Metric</field>
+        <field name="Datasheet">https://yageogroup.com/content/datasheet/asset/file/PYU-RC_GROUP_51_ROHS_L</field>
+        <field name="Description">4.7 kOhms ±1% 0.063W, 1/16W Chip Resistor 0402 (1005 Metric) Moisture Resistant Thick Film</field>
       </fields>
       <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Config" value=""/>
+      <property name="Manufacturer" value="YAGEO"/>
+      <property name="Manufacturer Part Number" value="RC0402FR-074K7L"/>
       <property name="Sheetname" value="MCU"/>
       <property name="Sheetfile" value="MCU.kicad_sch"/>
       <property name="ki_keywords" value="R res resistor"/>
@@ -351,14 +425,21 @@
     </comp>
     <comp ref="R2">
       <value>4k7</value>
-      <datasheet>~</datasheet>
-      <description>Resistor</description>
+      <footprint>0_resistor_SMD:R_0402_1005Metric</footprint>
+      <datasheet>https://yageogroup.com/content/datasheet/asset/file/PYU-RC_GROUP_51_ROHS_L</datasheet>
+      <description>4.7 kOhms ±1% 0.063W, 1/16W Chip Resistor 0402 (1005 Metric) Moisture Resistant Thick Film</description>
       <fields>
-        <field name="Footprint"/>
-        <field name="Datasheet">~</field>
-        <field name="Description">Resistor</field>
+        <field name="Config"/>
+        <field name="Manufacturer">YAGEO</field>
+        <field name="Manufacturer Part Number">RC0402FR-074K7L</field>
+        <field name="Footprint">0_resistor_SMD:R_0402_1005Metric</field>
+        <field name="Datasheet">https://yageogroup.com/content/datasheet/asset/file/PYU-RC_GROUP_51_ROHS_L</field>
+        <field name="Description">4.7 kOhms ±1% 0.063W, 1/16W Chip Resistor 0402 (1005 Metric) Moisture Resistant Thick Film</field>
       </fields>
       <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Config" value=""/>
+      <property name="Manufacturer" value="YAGEO"/>
+      <property name="Manufacturer Part Number" value="RC0402FR-074K7L"/>
       <property name="Sheetname" value="MCU"/>
       <property name="Sheetfile" value="MCU.kicad_sch"/>
       <property name="ki_keywords" value="R res resistor"/>
@@ -366,34 +447,46 @@
       <sheetpath names="/Project Architecture/MCU/" tstamps="/c5103ceb-5325-4a84-a025-9638a412984e/f06537ee-772d-44d3-8c50-e0ba41038c9c/"/>
       <tstamps>388b0c58-dcfc-4257-bb8e-42170f8be5da</tstamps>
     </comp>
-    <comp ref="U1">
-      <value>STM32U031C6Ux</value>
-      <footprint>Package_DFN_QFN:QFN-48-1EP_7x7mm_P0.5mm_EP5.6x5.6mm</footprint>
-      <datasheet>https://www.st.com/resource/en/datasheet/stm32u031c6.pdf</datasheet>
-      <description>STMicroelectronics Arm Cortex-M0+ MCU, 32KB flash, 12KB RAM, 39 GPIO, UFQFPN48</description>
+    <comp ref="U4">
+      <value>STM32U031K8U6</value>
+      <footprint>0_mcu:UFQFPN-32_STM</footprint>
+      <datasheet>https://www.st.com/resource/en/datasheet/stm32u031f4.pdf</datasheet>
       <fields>
-        <field name="Footprint">Package_DFN_QFN:QFN-48-1EP_7x7mm_P0.5mm_EP5.6x5.6mm</field>
-        <field name="Datasheet">https://www.st.com/resource/en/datasheet/stm32u031c6.pdf</field>
-        <field name="Description">STMicroelectronics Arm Cortex-M0+ MCU, 32KB flash, 12KB RAM, 39 GPIO, UFQFPN48</field>
+        <field name="Config"/>
+        <field name="Manufacturer"/>
+        <field name="Manufacturer Part Number"/>
+        <field name="Footprint">0_mcu:UFQFPN-32_STM</field>
+        <field name="Datasheet">https://www.st.com/resource/en/datasheet/stm32u031f4.pdf</field>
+        <field name="Description"/>
       </fields>
-      <libsource lib="" part="STM32U031C6Ux_1" description="STMicroelectronics Arm Cortex-M0+ MCU, 32KB flash, 12KB RAM, 39 GPIO, UFQFPN48"/>
+      <libsource lib="" part="STM32U031K8U6_1" description=""/>
+      <property name="Config" value=""/>
+      <property name="Manufacturer" value=""/>
+      <property name="Manufacturer Part Number" value=""/>
       <property name="Sheetname" value="MCU"/>
       <property name="Sheetfile" value="MCU.kicad_sch"/>
-      <property name="ki_keywords" value="Arm Cortex-M0+ STM32U0 STM32U0x1"/>
-      <property name="ki_fp_filters" value="QFN*1EP*7x7mm*P0.5mm*"/>
+      <property name="ki_keywords" value="STM32U031K8U6"/>
+      <property name="ki_fp_filters" value="UFQFPN-32_STM"/>
       <sheetpath names="/Project Architecture/MCU/" tstamps="/c5103ceb-5325-4a84-a025-9638a412984e/f06537ee-772d-44d3-8c50-e0ba41038c9c/"/>
-      <tstamps>54fb6870-a2d3-4561-a321-eaf02f7cdf94 54fb6870-a2d3-4561-a321-eaf02f7cdf93</tstamps>
+      <tstamps>fbda9141-2492-4308-a87b-7c578bbb341a fbda9141-2492-4308-a87b-7c578bbb3419</tstamps>
     </comp>
     <comp ref="C1">
-      <value>0.1uF</value>
-      <datasheet>~</datasheet>
+      <value>0.1u</value>
+      <footprint>0_capacitor_SMD:C_0402_1005Metric</footprint>
+      <datasheet>https://eu.mouser.com/datasheet/3/508/1/KEM_C1002_X7R_SMD.pdf</datasheet>
       <description>Unpolarized capacitor</description>
       <fields>
-        <field name="Footprint"/>
-        <field name="Datasheet">~</field>
+        <field name="Config"/>
+        <field name="Manufacturer">KEMET</field>
+        <field name="Manufacturer Part Number"> C0402C104K8RAC</field>
+        <field name="Footprint">0_capacitor_SMD:C_0402_1005Metric</field>
+        <field name="Datasheet">https://eu.mouser.com/datasheet/3/508/1/KEM_C1002_X7R_SMD.pdf</field>
         <field name="Description">Unpolarized capacitor</field>
       </fields>
       <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Config" value=""/>
+      <property name="Manufacturer" value="KEMET"/>
+      <property name="Manufacturer Part Number" value=" C0402C104K8RAC"/>
       <property name="Sheetname" value="IMU"/>
       <property name="Sheetfile" value="IMU.kicad_sch"/>
       <property name="ki_keywords" value="cap capacitor"/>
@@ -402,15 +495,22 @@
       <tstamps>68f9ae99-b686-4089-a460-65d350eaa270</tstamps>
     </comp>
     <comp ref="C2">
-      <value>10uF</value>
-      <datasheet>~</datasheet>
-      <description>Unpolarized capacitor</description>
+      <value>10u</value>
+      <footprint>0_capacitor_SMD:C_0603_1608Metric</footprint>
+      <datasheet>https://www.samsungsem.com/resources/file/global/support/product_catalog/MLCC.pdf</datasheet>
+      <description>Multilayer Ceramic Capacitors MLCC - SMD/SMT 10uF+/-10% 10V X5R 1 0603</description>
       <fields>
-        <field name="Footprint"/>
-        <field name="Datasheet">~</field>
-        <field name="Description">Unpolarized capacitor</field>
+        <field name="Config"/>
+        <field name="Manufacturer">Samsung</field>
+        <field name="Manufacturer Part Number">CL10A106KP8NNNC</field>
+        <field name="Footprint">0_capacitor_SMD:C_0603_1608Metric</field>
+        <field name="Datasheet">https://www.samsungsem.com/resources/file/global/support/product_catalog/MLCC.pdf</field>
+        <field name="Description">Multilayer Ceramic Capacitors MLCC - SMD/SMT 10uF+/-10% 10V X5R 1 0603</field>
       </fields>
       <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Config" value=""/>
+      <property name="Manufacturer" value="Samsung"/>
+      <property name="Manufacturer Part Number" value="CL10A106KP8NNNC"/>
       <property name="Sheetname" value="IMU"/>
       <property name="Sheetfile" value="IMU.kicad_sch"/>
       <property name="ki_keywords" value="cap capacitor"/>
@@ -420,14 +520,21 @@
     </comp>
     <comp ref="FB1">
       <value>FerriteBead</value>
-      <datasheet>~</datasheet>
-      <description>Ferrite bead</description>
+      <footprint>0_ferrite_beads:FB_0603_1608Metric</footprint>
+      <datasheet>https://product.tdk.com/system/files/dam/doc/product/emc/emc/beads/catalog/beads_automotive_power_mpz1608_en.pdf?ref_disty=mouser</datasheet>
+      <description>Ferrite Beads 0603 100ohms 2000mA Power Line AEC-Q200</description>
       <fields>
-        <field name="Footprint"/>
-        <field name="Datasheet">~</field>
-        <field name="Description">Ferrite bead</field>
+        <field name="Config"/>
+        <field name="Manufacturer">TDK</field>
+        <field name="Manufacturer Part Number"> MPZ1608Y101BTD25 </field>
+        <field name="Footprint">0_ferrite_beads:FB_0603_1608Metric</field>
+        <field name="Datasheet">https://product.tdk.com/system/files/dam/doc/product/emc/emc/beads/catalog/beads_automotive_power_mpz1608_en.pdf?ref_disty=mouser</field>
+        <field name="Description">Ferrite Beads 0603 100ohms 2000mA Power Line AEC-Q200</field>
       </fields>
       <libsource lib="Device" part="FerriteBead" description="Ferrite bead"/>
+      <property name="Config" value=""/>
+      <property name="Manufacturer" value="TDK"/>
+      <property name="Manufacturer Part Number" value=" MPZ1608Y101BTD25 "/>
       <property name="Sheetname" value="IMU"/>
       <property name="Sheetfile" value="IMU.kicad_sch"/>
       <property name="ki_keywords" value="L ferrite bead inductor filter"/>
@@ -435,33 +542,46 @@
       <sheetpath names="/Project Architecture/IMU/" tstamps="/c5103ceb-5325-4a84-a025-9638a412984e/e744f3ce-03a6-44a6-8792-1447ef232b9a/"/>
       <tstamps>f492c944-37e8-4e00-a27c-5ef8b2a88f38</tstamps>
     </comp>
-    <comp ref="U2">
+    <comp ref="U1">
       <value>ADXL345BCCZ</value>
-      <footprint>LGA_CC-14-1_ADI</footprint>
-      <datasheet>https://www.analog.com/media/en/technical-documentation/data-sheets/ADXL345-EP.pdf</datasheet>
+      <footprint>0_imu:LGA_CC-14-1_ADI</footprint>
+      <datasheet>https://www.analog.com/media/en/technical-documentation/data-sheets/ADXL345.pdf</datasheet>
       <fields>
-        <field name="Footprint">LGA_CC-14-1_ADI</field>
-        <field name="Datasheet">https://www.analog.com/media/en/technical-documentation/data-sheets/ADXL345-EP.pdf</field>
+        <field name="Config"/>
+        <field name="Manufacturer"/>
+        <field name="Manufacturer Part Number"/>
+        <field name="Footprint">0_imu:LGA_CC-14-1_ADI</field>
+        <field name="Datasheet">https://www.analog.com/media/en/technical-documentation/data-sheets/ADXL345.pdf</field>
         <field name="Description"/>
       </fields>
-      <libsource lib="2026-02-02_16-19-33" part="ADXL345BCCZ" description=""/>
+      <libsource lib="0_imu" part="ADXL345BCCZ" description=""/>
+      <property name="Config" value=""/>
+      <property name="Manufacturer" value=""/>
+      <property name="Manufacturer Part Number" value=""/>
       <property name="Sheetname" value="IMU"/>
       <property name="Sheetfile" value="IMU.kicad_sch"/>
       <property name="ki_keywords" value="ADXL345BCCZ"/>
       <property name="ki_fp_filters" value="LGA_CC-14-1_ADI LGA_CC-14-1_ADI-M LGA_CC-14-1_ADI-L"/>
       <sheetpath names="/Project Architecture/IMU/" tstamps="/c5103ceb-5325-4a84-a025-9638a412984e/e744f3ce-03a6-44a6-8792-1447ef232b9a/"/>
-      <tstamps>621a78b0-261b-4f4d-9a62-22812e2c6701</tstamps>
+      <tstamps>40d5829e-8f20-4144-bdf5-b9ab2feecb60</tstamps>
     </comp>
     <comp ref="C10">
       <value>0.1u</value>
-      <datasheet>~</datasheet>
+      <footprint>0_capacitor_SMD:C_0402_1005Metric</footprint>
+      <datasheet>https://eu.mouser.com/datasheet/3/508/1/KEM_C1002_X7R_SMD.pdf</datasheet>
       <description>Unpolarized capacitor</description>
       <fields>
-        <field name="Footprint"/>
-        <field name="Datasheet">~</field>
+        <field name="Config"/>
+        <field name="Manufacturer">KEMET</field>
+        <field name="Manufacturer Part Number">C0402C104K8RAC</field>
+        <field name="Footprint">0_capacitor_SMD:C_0402_1005Metric</field>
+        <field name="Datasheet">https://eu.mouser.com/datasheet/3/508/1/KEM_C1002_X7R_SMD.pdf</field>
         <field name="Description">Unpolarized capacitor</field>
       </fields>
       <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Config" value=""/>
+      <property name="Manufacturer" value="KEMET"/>
+      <property name="Manufacturer Part Number" value="C0402C104K8RAC"/>
       <property name="Sheetname" value="Connectors"/>
       <property name="Sheetfile" value="Connectors.kicad_sch"/>
       <property name="ki_keywords" value="cap capacitor"/>
@@ -471,49 +591,69 @@
     </comp>
     <comp ref="C11">
       <value>22u</value>
-      <footprint>CAP_226ME15D_MUR</footprint>
-      <datasheet>GRM187R61A226ME15D</datasheet>
+      <footprint>0_capacitor_SMD:C_0603_1608Metric</footprint>
+      <datasheet>https://search.murata.co.jp/Ceramy/image/img/A01X/G101/ENG/GRM187R61A226ME15-01.pdf</datasheet>
+      <description>22 µF ±20% 10V Ceramic Capacitor X5R 0603 (1608 Metric)</description>
       <fields>
-        <field name="Footprint">CAP_226ME15D_MUR</field>
-        <field name="Datasheet">GRM187R61A226ME15D</field>
-        <field name="Description"/>
+        <field name="Config"/>
+        <field name="Manufacturer"/>
+        <field name="Manufacturer Part Number"/>
+        <field name="Footprint">0_capacitor_SMD:C_0603_1608Metric</field>
+        <field name="Datasheet">https://search.murata.co.jp/Ceramy/image/img/A01X/G101/ENG/GRM187R61A226ME15-01.pdf</field>
+        <field name="Description">22 µF ±20% 10V Ceramic Capacitor X5R 0603 (1608 Metric)</field>
       </fields>
-      <libsource lib="2026-02-10_14-40-51" part="GRM187R61A226ME15D" description=""/>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Config" value=""/>
+      <property name="Manufacturer" value=""/>
+      <property name="Manufacturer Part Number" value=""/>
       <property name="Sheetname" value="Connectors"/>
       <property name="Sheetfile" value="Connectors.kicad_sch"/>
-      <property name="ki_keywords" value="GRM187R61A226ME15D"/>
-      <property name="ki_fp_filters" value="CAP_226ME15D_MUR CAP_226ME15D_MUR-M CAP_226ME15D_MUR-L"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
       <sheetpath names="/Project Architecture/Connectors/" tstamps="/c5103ceb-5325-4a84-a025-9638a412984e/55293819-ba92-422a-84cb-5e584cec8606/"/>
-      <tstamps>a2bfffd5-c5f6-4fe3-b142-bb001b8d7e0b</tstamps>
+      <tstamps>c8bc7655-7e91-451f-96cf-70845de5fa34</tstamps>
     </comp>
     <comp ref="C12">
       <value>47u</value>
-      <footprint>CAP_GRM216R_2X1P25_MUR</footprint>
-      <datasheet>GRM219R60J476ME44D</datasheet>
+      <footprint>0_capacitor_SMD:C_0805_2012Metric</footprint>
+      <datasheet>https://search.murata.co.jp/Ceramy/image/img/A01X/G101/ENG/GRM219R60J476ME44-01.pdf</datasheet>
+      <description>47 µF ±20% 6.3V Ceramic Capacitor X5R 0805 (2012 Metric)</description>
       <fields>
-        <field name="Footprint">CAP_GRM216R_2X1P25_MUR</field>
-        <field name="Datasheet">GRM219R60J476ME44D</field>
-        <field name="Description"/>
+        <field name="Config"/>
+        <field name="Manufacturer"/>
+        <field name="Manufacturer Part Number"/>
+        <field name="Footprint">0_capacitor_SMD:C_0805_2012Metric</field>
+        <field name="Datasheet">https://search.murata.co.jp/Ceramy/image/img/A01X/G101/ENG/GRM219R60J476ME44-01.pdf</field>
+        <field name="Description">47 µF ±20% 6.3V Ceramic Capacitor X5R 0805 (2012 Metric)</field>
       </fields>
-      <libsource lib="2026-02-10_14-38-14" part="GRM219R60J476ME44D" description=""/>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Config" value=""/>
+      <property name="Manufacturer" value=""/>
+      <property name="Manufacturer Part Number" value=""/>
       <property name="Sheetname" value="Connectors"/>
       <property name="Sheetfile" value="Connectors.kicad_sch"/>
-      <property name="ki_keywords" value="GRM219R60J476ME44D"/>
-      <property name="ki_fp_filters" value="CAP_GRM216R_2X1P25_MUR CAP_GRM216R_2X1P25_MUR-M CAP_GRM216R_2X1P25_MUR-L"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
       <sheetpath names="/Project Architecture/Connectors/" tstamps="/c5103ceb-5325-4a84-a025-9638a412984e/55293819-ba92-422a-84cb-5e584cec8606/"/>
-      <tstamps>6a2a9249-da78-40e3-a8f2-2aeb3ab3920c</tstamps>
+      <tstamps>1a8c0ea9-5b87-43d2-8e92-675df7e9e435</tstamps>
     </comp>
     <comp ref="J1">
       <value>Conn_01x02</value>
-      <footprint>Connector_JST:JST_EH_B2B-EH-A_1x02_P2.50mm_Vertical</footprint>
+      <footprint>0_connectors:JST_EH_B2B-EH-A_1x02_P2.50mm_Vertical</footprint>
       <datasheet>~</datasheet>
       <description>Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)</description>
       <fields>
-        <field name="Footprint">Connector_JST:JST_EH_B2B-EH-A_1x02_P2.50mm_Vertical</field>
+        <field name="Config"/>
+        <field name="Manufacturer"/>
+        <field name="Manufacturer Part Number"/>
+        <field name="Footprint">0_connectors:JST_EH_B2B-EH-A_1x02_P2.50mm_Vertical</field>
         <field name="Datasheet">~</field>
         <field name="Description">Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)</field>
       </fields>
       <libsource lib="Connector_Generic" part="Conn_01x02" description="Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <property name="Config" value=""/>
+      <property name="Manufacturer" value=""/>
+      <property name="Manufacturer Part Number" value=""/>
       <property name="Sheetname" value="Connectors"/>
       <property name="Sheetfile" value="Connectors.kicad_sch"/>
       <property name="ki_keywords" value="connector"/>
@@ -523,14 +663,21 @@
     </comp>
     <comp ref="J2">
       <value>Conn_01x05</value>
+      <footprint>0_connectors:JST_EH_B5B-EH-A_1x05_P2.50mm_Vertical</footprint>
       <datasheet>~</datasheet>
       <description>Generic connector, single row, 01x05, script generated (kicad-library-utils/schlib/autogen/connector/)</description>
       <fields>
-        <field name="Footprint"/>
+        <field name="Config"/>
+        <field name="Manufacturer"/>
+        <field name="Manufacturer Part Number"/>
+        <field name="Footprint">0_connectors:JST_EH_B5B-EH-A_1x05_P2.50mm_Vertical</field>
         <field name="Datasheet">~</field>
         <field name="Description">Generic connector, single row, 01x05, script generated (kicad-library-utils/schlib/autogen/connector/)</field>
       </fields>
       <libsource lib="Connector_Generic" part="Conn_01x05" description="Generic connector, single row, 01x05, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <property name="Config" value=""/>
+      <property name="Manufacturer" value=""/>
+      <property name="Manufacturer Part Number" value=""/>
       <property name="Sheetname" value="Connectors"/>
       <property name="Sheetfile" value="Connectors.kicad_sch"/>
       <property name="ki_keywords" value="connector"/>
@@ -538,33 +685,47 @@
       <sheetpath names="/Project Architecture/Connectors/" tstamps="/c5103ceb-5325-4a84-a025-9638a412984e/55293819-ba92-422a-84cb-5e584cec8606/"/>
       <tstamps>6bd7425c-f59e-4126-9aa1-b47593fc1a47</tstamps>
     </comp>
-    <comp ref="L1">
+    <comp ref="L2">
       <value>1u</value>
-      <footprint>HTEK20161T-1R0MSR_CYN</footprint>
-      <datasheet>HTEK20161T-1R0MSR</datasheet>
+      <footprint>0_inductor:HTEK20161T-1R0MSR_CYN</footprint>
+      <datasheet>~</datasheet>
+      <description>HTEK20161T-1R0MSR Inductor</description>
       <fields>
-        <field name="Footprint">HTEK20161T-1R0MSR_CYN</field>
-        <field name="Datasheet">HTEK20161T-1R0MSR</field>
-        <field name="Description"/>
+        <field name="Config"/>
+        <field name="Manufacturer"/>
+        <field name="Manufacturer Part Number"/>
+        <field name="Footprint">0_inductor:HTEK20161T-1R0MSR_CYN</field>
+        <field name="Datasheet">~</field>
+        <field name="Description">HTEK20161T-1R0MSR Inductor</field>
       </fields>
-      <libsource lib="2026-02-10_14-30-14" part="HTEK20161T-1R0MSR" description=""/>
+      <libsource lib="Device" part="L" description="Inductor"/>
+      <property name="Config" value=""/>
+      <property name="Manufacturer" value=""/>
+      <property name="Manufacturer Part Number" value=""/>
       <property name="Sheetname" value="Connectors"/>
       <property name="Sheetfile" value="Connectors.kicad_sch"/>
-      <property name="ki_keywords" value="HTEK20161T-1R0MSR"/>
-      <property name="ki_fp_filters" value="HTEK20161T-1R0MSR_CYN HTEK20161T-1R0MSR_CYN-M HTEK20161T-1R0MSR_CYN-L"/>
+      <property name="ki_keywords" value="inductor choke coil reactor magnetic"/>
+      <property name="ki_fp_filters" value="Choke_* *Coil* Inductor_* L_*"/>
       <sheetpath names="/Project Architecture/Connectors/" tstamps="/c5103ceb-5325-4a84-a025-9638a412984e/55293819-ba92-422a-84cb-5e584cec8606/"/>
-      <tstamps>33276ceb-7ca0-4895-9fcc-20fdf8344ea6</tstamps>
+      <tstamps>f5130d0b-b34a-4531-9c47-33ba8e19bb3e</tstamps>
     </comp>
     <comp ref="U3">
       <value>TPS631012YBGR</value>
-      <footprint>DSBGA8-YBG_TEX</footprint>
-      <datasheet>https://www.ti.com/lit/gpn/tps631012</datasheet>
+      <footprint>0_switching_regulator:DSBGA8-YBG_TEX</footprint>
+      <datasheet>https://www.ti.com/lit/ds/symlink/tps631012.pdf?ts=1698770698551</datasheet>
+      <description>Buck-Boost Switching Regulator IC Positive Adjustable 1V 1 Output 1.5A 8-XFBGA, DSBGA</description>
       <fields>
-        <field name="Footprint">DSBGA8-YBG_TEX</field>
-        <field name="Datasheet">https://www.ti.com/lit/gpn/tps631012</field>
-        <field name="Description"/>
+        <field name="Config"/>
+        <field name="Manufacturer"/>
+        <field name="Manufacturer Part Number"/>
+        <field name="Footprint">0_switching_regulator:DSBGA8-YBG_TEX</field>
+        <field name="Datasheet">https://www.ti.com/lit/ds/symlink/tps631012.pdf?ts=1698770698551</field>
+        <field name="Description">Buck-Boost Switching Regulator IC Positive Adjustable 1V 1 Output 1.5A 8-XFBGA, DSBGA</field>
       </fields>
-      <libsource lib="2026-02-05_12-13-47" part="TPS631012YBGR" description=""/>
+      <libsource lib="0_switching_regulator" part="TPS631012YBGR" description="Buck-Boost Switching Regulator IC Positive Adjustable 1V 1 Output 1.5A 8-XFBGA, DSBGA"/>
+      <property name="Config" value=""/>
+      <property name="Manufacturer" value=""/>
+      <property name="Manufacturer Part Number" value=""/>
       <property name="Sheetname" value="Connectors"/>
       <property name="Sheetfile" value="Connectors.kicad_sch"/>
       <property name="ki_keywords" value="TPS631012YBGR"/>
@@ -572,20 +733,269 @@
       <sheetpath names="/Project Architecture/Connectors/" tstamps="/c5103ceb-5325-4a84-a025-9638a412984e/55293819-ba92-422a-84cb-5e584cec8606/"/>
       <tstamps>1e90aec5-4915-4376-a489-5c1e9100cf96</tstamps>
     </comp>
+    <comp ref="FD1">
+      <value>Fiducial</value>
+      <footprint>0_fiducials:Fiducial_1mm_Mask2mm</footprint>
+      <datasheet>~</datasheet>
+      <description>Fiducial Marker</description>
+      <fields>
+        <field name="Config"/>
+        <field name="Manufacturer"/>
+        <field name="Manufacturer Part Number"/>
+        <field name="Footprint">0_fiducials:Fiducial_1mm_Mask2mm</field>
+        <field name="Datasheet">~</field>
+        <field name="Description">Fiducial Marker</field>
+      </fields>
+      <libsource lib="Mechanical" part="Fiducial" description="Fiducial Marker"/>
+      <property name="Config" value=""/>
+      <property name="Manufacturer" value=""/>
+      <property name="Manufacturer Part Number" value=""/>
+      <property name="Sheetname" value="Holes, Fiducials"/>
+      <property name="Sheetfile" value="Holes_Fiducials.kicad_sch"/>
+      <property name="exclude_from_bom"/>
+      <property name="ki_keywords" value="fiducial marker"/>
+      <property name="ki_fp_filters" value="Fiducial*"/>
+      <sheetpath names="/Project Architecture/Holes, Fiducials/" tstamps="/c5103ceb-5325-4a84-a025-9638a412984e/cb817f12-2719-4c91-980f-4ef133f86491/"/>
+      <tstamps>fec068b2-98f9-4e31-a49f-d94e94c16c6c</tstamps>
+    </comp>
+    <comp ref="FD2">
+      <value>Fiducial</value>
+      <footprint>0_fiducials:Fiducial_1mm_Mask2mm</footprint>
+      <datasheet>~</datasheet>
+      <description>Fiducial Marker</description>
+      <fields>
+        <field name="Config"/>
+        <field name="Manufacturer"/>
+        <field name="Manufacturer Part Number"/>
+        <field name="Footprint">0_fiducials:Fiducial_1mm_Mask2mm</field>
+        <field name="Datasheet">~</field>
+        <field name="Description">Fiducial Marker</field>
+      </fields>
+      <libsource lib="Mechanical" part="Fiducial" description="Fiducial Marker"/>
+      <property name="Config" value=""/>
+      <property name="Manufacturer" value=""/>
+      <property name="Manufacturer Part Number" value=""/>
+      <property name="Sheetname" value="Holes, Fiducials"/>
+      <property name="Sheetfile" value="Holes_Fiducials.kicad_sch"/>
+      <property name="exclude_from_bom"/>
+      <property name="ki_keywords" value="fiducial marker"/>
+      <property name="ki_fp_filters" value="Fiducial*"/>
+      <sheetpath names="/Project Architecture/Holes, Fiducials/" tstamps="/c5103ceb-5325-4a84-a025-9638a412984e/cb817f12-2719-4c91-980f-4ef133f86491/"/>
+      <tstamps>27b756b1-e862-4ce4-b517-75e4a0f9057b</tstamps>
+    </comp>
+    <comp ref="FD3">
+      <value>Fiducial</value>
+      <footprint>0_fiducials:Fiducial_1mm_Mask2mm</footprint>
+      <datasheet>~</datasheet>
+      <description>Fiducial Marker</description>
+      <fields>
+        <field name="Config"/>
+        <field name="Manufacturer"/>
+        <field name="Manufacturer Part Number"/>
+        <field name="Footprint">0_fiducials:Fiducial_1mm_Mask2mm</field>
+        <field name="Datasheet">~</field>
+        <field name="Description">Fiducial Marker</field>
+      </fields>
+      <libsource lib="Mechanical" part="Fiducial" description="Fiducial Marker"/>
+      <property name="Config" value=""/>
+      <property name="Manufacturer" value=""/>
+      <property name="Manufacturer Part Number" value=""/>
+      <property name="Sheetname" value="Holes, Fiducials"/>
+      <property name="Sheetfile" value="Holes_Fiducials.kicad_sch"/>
+      <property name="exclude_from_bom"/>
+      <property name="ki_keywords" value="fiducial marker"/>
+      <property name="ki_fp_filters" value="Fiducial*"/>
+      <sheetpath names="/Project Architecture/Holes, Fiducials/" tstamps="/c5103ceb-5325-4a84-a025-9638a412984e/cb817f12-2719-4c91-980f-4ef133f86491/"/>
+      <tstamps>183d9766-3446-4116-b29b-9931adefcc87</tstamps>
+    </comp>
+    <comp ref="FD4">
+      <value>Fiducial</value>
+      <footprint>0_fiducials:Fiducial_1mm_Mask2mm</footprint>
+      <datasheet>~</datasheet>
+      <description>Fiducial Marker</description>
+      <fields>
+        <field name="Config"/>
+        <field name="Manufacturer"/>
+        <field name="Manufacturer Part Number"/>
+        <field name="Footprint">0_fiducials:Fiducial_1mm_Mask2mm</field>
+        <field name="Datasheet">~</field>
+        <field name="Description">Fiducial Marker</field>
+      </fields>
+      <libsource lib="Mechanical" part="Fiducial" description="Fiducial Marker"/>
+      <property name="Config" value=""/>
+      <property name="Manufacturer" value=""/>
+      <property name="Manufacturer Part Number" value=""/>
+      <property name="Sheetname" value="Holes, Fiducials"/>
+      <property name="Sheetfile" value="Holes_Fiducials.kicad_sch"/>
+      <property name="exclude_from_bom"/>
+      <property name="ki_keywords" value="fiducial marker"/>
+      <property name="ki_fp_filters" value="Fiducial*"/>
+      <sheetpath names="/Project Architecture/Holes, Fiducials/" tstamps="/c5103ceb-5325-4a84-a025-9638a412984e/cb817f12-2719-4c91-980f-4ef133f86491/"/>
+      <tstamps>b016965b-67de-4fe6-9978-af06b3927b3c</tstamps>
+    </comp>
+    <comp ref="FD5">
+      <value>Fiducial</value>
+      <footprint>0_fiducials:Fiducial_1mm_Mask2mm</footprint>
+      <datasheet>~</datasheet>
+      <description>Fiducial Marker</description>
+      <fields>
+        <field name="Config"/>
+        <field name="Manufacturer"/>
+        <field name="Manufacturer Part Number"/>
+        <field name="Footprint">0_fiducials:Fiducial_1mm_Mask2mm</field>
+        <field name="Datasheet">~</field>
+        <field name="Description">Fiducial Marker</field>
+      </fields>
+      <libsource lib="Mechanical" part="Fiducial" description="Fiducial Marker"/>
+      <property name="Config" value=""/>
+      <property name="Manufacturer" value=""/>
+      <property name="Manufacturer Part Number" value=""/>
+      <property name="Sheetname" value="Holes, Fiducials"/>
+      <property name="Sheetfile" value="Holes_Fiducials.kicad_sch"/>
+      <property name="exclude_from_bom"/>
+      <property name="ki_keywords" value="fiducial marker"/>
+      <property name="ki_fp_filters" value="Fiducial*"/>
+      <sheetpath names="/Project Architecture/Holes, Fiducials/" tstamps="/c5103ceb-5325-4a84-a025-9638a412984e/cb817f12-2719-4c91-980f-4ef133f86491/"/>
+      <tstamps>bbbc5a09-167f-419f-9dc3-283b0b0ad5fd</tstamps>
+    </comp>
+    <comp ref="FD6">
+      <value>Fiducial</value>
+      <footprint>0_fiducials:Fiducial_1mm_Mask2mm</footprint>
+      <datasheet>~</datasheet>
+      <description>Fiducial Marker</description>
+      <fields>
+        <field name="Config"/>
+        <field name="Manufacturer"/>
+        <field name="Manufacturer Part Number"/>
+        <field name="Footprint">0_fiducials:Fiducial_1mm_Mask2mm</field>
+        <field name="Datasheet">~</field>
+        <field name="Description">Fiducial Marker</field>
+      </fields>
+      <libsource lib="Mechanical" part="Fiducial" description="Fiducial Marker"/>
+      <property name="Config" value=""/>
+      <property name="Manufacturer" value=""/>
+      <property name="Manufacturer Part Number" value=""/>
+      <property name="Sheetname" value="Holes, Fiducials"/>
+      <property name="Sheetfile" value="Holes_Fiducials.kicad_sch"/>
+      <property name="exclude_from_bom"/>
+      <property name="ki_keywords" value="fiducial marker"/>
+      <property name="ki_fp_filters" value="Fiducial*"/>
+      <sheetpath names="/Project Architecture/Holes, Fiducials/" tstamps="/c5103ceb-5325-4a84-a025-9638a412984e/cb817f12-2719-4c91-980f-4ef133f86491/"/>
+      <tstamps>2fbb87f4-eb71-4b42-913f-5761c63bdec2</tstamps>
+    </comp>
+    <comp ref="H1">
+      <value>M3</value>
+      <footprint>0_mounting_holes:MountingHole_3.2mm_M3_Pad</footprint>
+      <datasheet>~</datasheet>
+      <description>Mounting Hole with connection</description>
+      <fields>
+        <field name="Config"/>
+        <field name="Manufacturer"/>
+        <field name="Manufacturer Part Number"/>
+        <field name="Footprint">0_mounting_holes:MountingHole_3.2mm_M3_Pad</field>
+        <field name="Datasheet">~</field>
+        <field name="Description">Mounting Hole with connection</field>
+      </fields>
+      <libsource lib="0_mounting_holes" part="MountingHole_Pad" description="Mounting Hole with connection"/>
+      <property name="Config" value=""/>
+      <property name="Manufacturer" value=""/>
+      <property name="Manufacturer Part Number" value=""/>
+      <property name="Sheetname" value="Holes, Fiducials"/>
+      <property name="Sheetfile" value="Holes_Fiducials.kicad_sch"/>
+      <property name="exclude_from_bom"/>
+      <property name="ki_keywords" value="mounting hole"/>
+      <property name="ki_fp_filters" value="MountingHole*Pad*"/>
+      <sheetpath names="/Project Architecture/Holes, Fiducials/" tstamps="/c5103ceb-5325-4a84-a025-9638a412984e/cb817f12-2719-4c91-980f-4ef133f86491/"/>
+      <tstamps>843115e4-ce47-44bc-9aa0-8de2e21b9c42</tstamps>
+    </comp>
+    <comp ref="H2">
+      <value>M3</value>
+      <footprint>0_mounting_holes:MountingHole_3.2mm_M3_Pad</footprint>
+      <datasheet>~</datasheet>
+      <description>M3 Hole</description>
+      <fields>
+        <field name="Config"/>
+        <field name="Manufacturer"/>
+        <field name="Manufacturer Part Number"/>
+        <field name="Footprint">0_mounting_holes:MountingHole_3.2mm_M3_Pad</field>
+        <field name="Datasheet">~</field>
+        <field name="Description">M3 Hole</field>
+      </fields>
+      <libsource lib="Mechanical" part="MountingHole_Pad" description="Mounting Hole with connection"/>
+      <property name="Config" value=""/>
+      <property name="Manufacturer" value=""/>
+      <property name="Manufacturer Part Number" value=""/>
+      <property name="Sheetname" value="Holes, Fiducials"/>
+      <property name="Sheetfile" value="Holes_Fiducials.kicad_sch"/>
+      <property name="exclude_from_bom"/>
+      <property name="ki_keywords" value="mounting hole"/>
+      <property name="ki_fp_filters" value="MountingHole*Pad*"/>
+      <sheetpath names="/Project Architecture/Holes, Fiducials/" tstamps="/c5103ceb-5325-4a84-a025-9638a412984e/cb817f12-2719-4c91-980f-4ef133f86491/"/>
+      <tstamps>9e7a928e-6894-440d-8794-042596df3524</tstamps>
+    </comp>
+    <comp ref="H3">
+      <value>M3</value>
+      <footprint>0_mounting_holes:MountingHole_3.2mm_M3_Pad</footprint>
+      <datasheet>~</datasheet>
+      <description>M3 Hole</description>
+      <fields>
+        <field name="Config"/>
+        <field name="Manufacturer"/>
+        <field name="Manufacturer Part Number"/>
+        <field name="Footprint">0_mounting_holes:MountingHole_3.2mm_M3_Pad</field>
+        <field name="Datasheet">~</field>
+        <field name="Description">M3 Hole</field>
+      </fields>
+      <libsource lib="Mechanical" part="MountingHole_Pad" description="Mounting Hole with connection"/>
+      <property name="Config" value=""/>
+      <property name="Manufacturer" value=""/>
+      <property name="Manufacturer Part Number" value=""/>
+      <property name="Sheetname" value="Holes, Fiducials"/>
+      <property name="Sheetfile" value="Holes_Fiducials.kicad_sch"/>
+      <property name="exclude_from_bom"/>
+      <property name="ki_keywords" value="mounting hole"/>
+      <property name="ki_fp_filters" value="MountingHole*Pad*"/>
+      <sheetpath names="/Project Architecture/Holes, Fiducials/" tstamps="/c5103ceb-5325-4a84-a025-9638a412984e/cb817f12-2719-4c91-980f-4ef133f86491/"/>
+      <tstamps>3344ad88-a71d-41be-a724-a867b5c2f62c</tstamps>
+    </comp>
+    <comp ref="H4">
+      <value>M3</value>
+      <footprint>0_mounting_holes:MountingHole_3.2mm_M3_Pad</footprint>
+      <datasheet>~</datasheet>
+      <description>M3 Hole</description>
+      <fields>
+        <field name="Config"/>
+        <field name="Manufacturer"/>
+        <field name="Manufacturer Part Number"/>
+        <field name="Footprint">0_mounting_holes:MountingHole_3.2mm_M3_Pad</field>
+        <field name="Datasheet">~</field>
+        <field name="Description">M3 Hole</field>
+      </fields>
+      <libsource lib="Mechanical" part="MountingHole_Pad" description="Mounting Hole with connection"/>
+      <property name="Config" value=""/>
+      <property name="Manufacturer" value=""/>
+      <property name="Manufacturer Part Number" value=""/>
+      <property name="Sheetname" value="Holes, Fiducials"/>
+      <property name="Sheetfile" value="Holes_Fiducials.kicad_sch"/>
+      <property name="exclude_from_bom"/>
+      <property name="ki_keywords" value="mounting hole"/>
+      <property name="ki_fp_filters" value="MountingHole*Pad*"/>
+      <sheetpath names="/Project Architecture/Holes, Fiducials/" tstamps="/c5103ceb-5325-4a84-a025-9638a412984e/cb817f12-2719-4c91-980f-4ef133f86491/"/>
+      <tstamps>de9da0e2-992a-44f0-86b2-df2f52aa20c8</tstamps>
+    </comp>
   </components>
   <libparts>
-    <libpart lib="" part="STM32U031C6Ux_1">
-      <description>STMicroelectronics Arm Cortex-M0+ MCU, 32KB flash, 12KB RAM, 39 GPIO, UFQFPN48</description>
-      <docs>https://www.st.com/resource/en/datasheet/stm32u031c6.pdf</docs>
+    <libpart lib="" part="STM32U031K8U6_1">
+      <docs>https://www.st.com/resource/en/datasheet/stm32u031f4.pdf</docs>
       <footprints>
-        <fp>QFN*1EP*7x7mm*P0.5mm*</fp>
+        <fp>UFQFPN-32_STM</fp>
       </footprints>
       <fields>
-        <field name="Reference">U1</field>
-        <field name="Value">STM32U031C6Ux</field>
-        <field name="Footprint">Package_DFN_QFN:QFN-48-1EP_7x7mm_P0.5mm_EP5.6x5.6mm</field>
-        <field name="Datasheet">https://www.st.com/resource/en/datasheet/stm32u031c6.pdf</field>
-        <field name="Description">STMicroelectronics Arm Cortex-M0+ MCU, 32KB flash, 12KB RAM, 39 GPIO, UFQFPN48</field>
+        <field name="Reference">U</field>
+        <field name="Value">STM32U031K8U6</field>
+        <field name="Footprint">UFQFPN-32_STM</field>
+        <field name="Datasheet">https://www.st.com/resource/en/datasheet/stm32u031f4.pdf</field>
+        <field name="Description"/>
       </fields>
       <pins>
         <pin num="1" name="VBAT" type="power_in"/>
@@ -639,7 +1049,7 @@
         <pin num="49" name="VSS" type="passive"/>
       </pins>
     </libpart>
-    <libpart lib="2026-02-02_16-19-33" part="ADXL345BCCZ">
+    <libpart lib="0_imu" part="ADXL345BCCZ">
       <docs>https://www.analog.com/media/en/technical-documentation/data-sheets/ADXL345-EP.pdf</docs>
       <footprints>
         <fp>LGA_CC-14-1_ADI</fp>
@@ -647,7 +1057,7 @@
         <fp>LGA_CC-14-1_ADI-L</fp>
       </footprints>
       <fields>
-        <field name="Reference">U2</field>
+        <field name="Reference">U</field>
         <field name="Value">ADXL345BCCZ</field>
         <field name="Footprint">LGA_CC-14-1_ADI</field>
         <field name="Datasheet">https://www.analog.com/media/en/technical-documentation/data-sheets/ADXL345-EP.pdf</field>
@@ -660,6 +1070,7 @@
         <pin num="4" name="GND" type="unspecified"/>
         <pin num="5" name="GND" type="unspecified"/>
         <pin num="6" name="VS" type="unspecified"/>
+        <pin num="7" name="*CS" type="unspecified"/>
         <pin num="8" name="INT1" type="unspecified"/>
         <pin num="9" name="INT2" type="unspecified"/>
         <pin num="10" name="NC" type="unspecified"/>
@@ -669,8 +1080,26 @@
         <pin num="14" name="SCL/SCLK" type="unspecified"/>
       </pins>
     </libpart>
-    <libpart lib="2026-02-05_12-13-47" part="TPS631012YBGR">
-      <docs>https://www.ti.com/lit/gpn/tps631012</docs>
+    <libpart lib="0_mounting_holes" part="MountingHole_Pad">
+      <description>Mounting Hole with connection</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>MountingHole*Pad*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">H</field>
+        <field name="Value">MountingHole_Pad</field>
+        <field name="Footprint"/>
+        <field name="Datasheet">~</field>
+        <field name="Description">Mounting Hole with connection</field>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="input"/>
+      </pins>
+    </libpart>
+    <libpart lib="0_switching_regulator" part="TPS631012YBGR">
+      <description>Buck-Boost Switching Regulator IC Positive Adjustable 1V 1 Output 1.5A 8-XFBGA, DSBGA</description>
+      <docs>https://www.ti.com/lit/ds/symlink/tps631012.pdf?ts=1698770698551</docs>
       <footprints>
         <fp>DSBGA8-YBG_TEX</fp>
         <fp>DSBGA8-YBG_TEX-M</fp>
@@ -679,69 +1108,15 @@
       <fields>
         <field name="Reference">U3</field>
         <field name="Value">TPS631012YBGR</field>
-        <field name="Footprint">DSBGA8-YBG_TEX</field>
-        <field name="Datasheet">https://www.ti.com/lit/gpn/tps631012</field>
-        <field name="Description"/>
+        <field name="Footprint">0_switching_regulator:DSBGA8-YBG_TEX</field>
+        <field name="Datasheet">https://www.ti.com/lit/ds/symlink/tps631012.pdf?ts=1698770698551</field>
+        <field name="Description">Buck-Boost Switching Regulator IC Positive Adjustable 1V 1 Output 1.5A 8-XFBGA, DSBGA</field>
+        <field name="Config"/>
+        <field name="Manufacturer"/>
+        <field name="Manufacturer Part Number"/>
       </fields>
       <pins>
         <pin num="" name="VIN" type="power_in"/>
-      </pins>
-    </libpart>
-    <libpart lib="2026-02-10_14-30-14" part="HTEK20161T-1R0MSR">
-      <docs>HTEK20161T-1R0MSR</docs>
-      <footprints>
-        <fp>HTEK20161T-1R0MSR_CYN</fp>
-        <fp>HTEK20161T-1R0MSR_CYN-M</fp>
-        <fp>HTEK20161T-1R0MSR_CYN-L</fp>
-      </footprints>
-      <fields>
-        <field name="Reference">L1</field>
-        <field name="Value">1u</field>
-        <field name="Footprint">HTEK20161T-1R0MSR_CYN</field>
-        <field name="Datasheet">HTEK20161T-1R0MSR</field>
-        <field name="Description"/>
-      </fields>
-      <pins>
-        <pin num="1" name="1" type="unspecified"/>
-        <pin num="2" name="2" type="unspecified"/>
-      </pins>
-    </libpart>
-    <libpart lib="2026-02-10_14-38-14" part="GRM219R60J476ME44D">
-      <docs>GRM219R60J476ME44D</docs>
-      <footprints>
-        <fp>CAP_GRM216R_2X1P25_MUR</fp>
-        <fp>CAP_GRM216R_2X1P25_MUR-M</fp>
-        <fp>CAP_GRM216R_2X1P25_MUR-L</fp>
-      </footprints>
-      <fields>
-        <field name="Reference">C</field>
-        <field name="Value">GRM219R60J476ME44D</field>
-        <field name="Footprint">CAP_GRM216R_2X1P25_MUR</field>
-        <field name="Datasheet">GRM219R60J476ME44D</field>
-        <field name="Description"/>
-      </fields>
-      <pins>
-        <pin num="1" name="" type="unspecified"/>
-        <pin num="2" name="" type="unspecified"/>
-      </pins>
-    </libpart>
-    <libpart lib="2026-02-10_14-40-51" part="GRM187R61A226ME15D">
-      <docs>GRM187R61A226ME15D</docs>
-      <footprints>
-        <fp>CAP_226ME15D_MUR</fp>
-        <fp>CAP_226ME15D_MUR-M</fp>
-        <fp>CAP_226ME15D_MUR-L</fp>
-      </footprints>
-      <fields>
-        <field name="Reference">C</field>
-        <field name="Value">GRM187R61A226ME15D</field>
-        <field name="Footprint">CAP_226ME15D_MUR</field>
-        <field name="Datasheet">GRM187R61A226ME15D</field>
-        <field name="Description"/>
-      </fields>
-      <pins>
-        <pin num="1" name="" type="unspecified"/>
-        <pin num="2" name="" type="unspecified"/>
       </pins>
     </libpart>
     <libpart lib="Connector_Generic" part="Conn_01x02">
@@ -821,6 +1196,27 @@
         <pin num="2" name="" type="passive"/>
       </pins>
     </libpart>
+    <libpart lib="Device" part="L">
+      <description>Inductor</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>Choke_*</fp>
+        <fp>*Coil*</fp>
+        <fp>Inductor_*</fp>
+        <fp>L_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">L</field>
+        <field name="Value">L</field>
+        <field name="Footprint"/>
+        <field name="Datasheet">~</field>
+        <field name="Description">Inductor</field>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
     <libpart lib="Device" part="R">
       <description>Resistor</description>
       <docs>~</docs>
@@ -839,35 +1235,54 @@
         <pin num="2" name="" type="passive"/>
       </pins>
     </libpart>
+    <libpart lib="Mechanical" part="Fiducial">
+      <description>Fiducial Marker</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>Fiducial*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">FID</field>
+        <field name="Value">Fiducial</field>
+        <field name="Footprint"/>
+        <field name="Datasheet">~</field>
+        <field name="Description">Fiducial Marker</field>
+      </fields>
+    </libpart>
+    <libpart lib="Mechanical" part="MountingHole_Pad">
+      <description>Mounting Hole with connection</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>MountingHole*Pad*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">H</field>
+        <field name="Value">MountingHole_Pad</field>
+        <field name="Footprint"/>
+        <field name="Datasheet">~</field>
+        <field name="Description">Mounting Hole with connection</field>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="input"/>
+      </pins>
+    </libpart>
   </libparts>
   <libraries>
-    <library logical="2026-02-02_16-19-33">
-      <uri>/github/workspace/Components/ul_ADXL345BCCZ/KiCADv6/2026-02-02_16-19-33.kicad_sym</uri>
-    </library>
-    <library logical="2026-02-05_12-13-47">
-      <uri>/github/workspace/Components/ul_TPS631012YBGR/KiCADv6/2026-02-05_12-13-47.kicad_sym</uri>
-    </library>
-    <library logical="2026-02-10_14-30-14">
-      <uri>/github/workspace/Components/ul_HTEK20161T-1R0MSR/KiCADv6/2026-02-10_14-30-14.kicad_sym</uri>
-    </library>
-    <library logical="2026-02-10_14-38-14">
-      <uri>/github/workspace/Components/ul_GRM219R60J476ME44D/KiCADv6/2026-02-10_14-38-14.kicad_sym</uri>
-    </library>
-    <library logical="2026-02-10_14-40-51">
-      <uri>/github/workspace/Components/ul_GRM187R61A226ME15D/KiCADv6/2026-02-10_14-40-51.kicad_sym</uri>
-    </library>
     <library logical="Connector_Generic">
       <uri>/usr/share/kicad/symbols//Connector_Generic.kicad_sym</uri>
     </library>
     <library logical="Device">
       <uri>/usr/share/kicad/symbols//Device.kicad_sym</uri>
     </library>
+    <library logical="Mechanical">
+      <uri>/usr/share/kicad/symbols//Mechanical.kicad_sym</uri>
+    </library>
   </libraries>
   <nets>
     <net code="1" name="+3V3" class="Default">
       <node ref="C1" pin="1" pintype="passive"/>
       <node ref="C10" pin="1" pintype="passive"/>
-      <node ref="C12" pin="1" pintype="unspecified"/>
+      <node ref="C12" pin="1" pintype="passive"/>
       <node ref="C2" pin="1" pintype="passive"/>
       <node ref="C3" pin="1" pintype="passive"/>
       <node ref="C4" pin="1" pintype="passive"/>
@@ -880,78 +1295,61 @@
       <node ref="J2" pin="5" pinfunction="Pin_5" pintype="passive"/>
       <node ref="R1" pin="1" pintype="passive"/>
       <node ref="R2" pin="1" pintype="passive"/>
-      <node ref="U1" pin="1" pinfunction="VBAT" pintype="power_in"/>
-      <node ref="U1" pin="24" pinfunction="VDD" pintype="power_in"/>
-      <node ref="U1" pin="36" pinfunction="VDD" pintype="power_in"/>
-      <node ref="U1" pin="48" pinfunction="VDD" pintype="power_in"/>
-      <node ref="U1" pin="9" pinfunction="VDDA" pintype="power_in"/>
-      <node ref="U2" pin="1" pinfunction="VDD_I/O" pintype="unspecified"/>
+      <node ref="U1" pin="1" pinfunction="VDD_I/O" pintype="unspecified"/>
       <node ref="U3" pin="" pinfunction="VOUT" pintype="power_in"/>
+      <node ref="U4" pin="1" pinfunction="VBAT" pintype="power_in"/>
+      <node ref="U4" pin="24" pinfunction="VDD" pintype="power_in"/>
+      <node ref="U4" pin="36" pinfunction="VDD" pintype="power_in"/>
+      <node ref="U4" pin="48" pinfunction="VDD" pintype="power_in"/>
+      <node ref="U4" pin="9" pinfunction="VDDA" pintype="power_in"/>
     </net>
     <net code="2" name="/Project Architecture/Connectors/NRST" class="Default">
       <node ref="J2" pin="2" pinfunction="Pin_2" pintype="passive"/>
+      <node ref="U4" pin="7" pinfunction="PF2" pintype="bidirectional"/>
     </net>
     <net code="3" name="/Project Architecture/Connectors/SCL" class="Default">
+      <node ref="R1" pin="2" pintype="passive"/>
       <node ref="U3" pin="" pinfunction="SCL" pintype="input"/>
+      <node ref="U4" pin="31" pinfunction="PA10" pintype="bidirectional"/>
     </net>
     <net code="4" name="/Project Architecture/Connectors/SDA" class="Default">
+      <node ref="R2" pin="2" pintype="passive"/>
       <node ref="U3" pin="" pinfunction="SDA" pintype="input"/>
+      <node ref="U4" pin="32" pinfunction="PA11" pintype="bidirectional"/>
     </net>
     <net code="5" name="/Project Architecture/Connectors/SWCLK" class="Default">
       <node ref="J2" pin="3" pinfunction="Pin_3" pintype="passive"/>
+      <node ref="U4" pin="37" pinfunction="PA14" pintype="bidirectional"/>
     </net>
     <net code="6" name="/Project Architecture/Connectors/SWDIO" class="Default">
       <node ref="J2" pin="4" pinfunction="Pin_4" pintype="passive"/>
+      <node ref="U4" pin="34" pinfunction="PA13" pintype="bidirectional"/>
+    </net>
+    <net code="9" name="/Project Architecture/IMU/CS*" class="Default">
+      <node ref="U1" pin="7" pinfunction="*CS" pintype="unspecified"/>
+      <node ref="U4" pin="18" pinfunction="PB0" pintype="bidirectional"/>
     </net>
     <net code="10" name="/Project Architecture/IMU/INT" class="Default">
-      <node ref="U2" pin="8" pinfunction="INT1" pintype="unspecified"/>
+      <node ref="U1" pin="8" pinfunction="INT1" pintype="unspecified"/>
+      <node ref="U4" pin="19" pinfunction="PB1" pintype="bidirectional"/>
     </net>
     <net code="11" name="/Project Architecture/IMU/SCLK" class="Default">
-      <node ref="U2" pin="14" pinfunction="SCL/SCLK" pintype="unspecified"/>
+      <node ref="U1" pin="14" pinfunction="SCL/SCLK" pintype="unspecified"/>
+      <node ref="U4" pin="39" pinfunction="PB3" pintype="bidirectional"/>
     </net>
     <net code="12" name="/Project Architecture/IMU/SDI" class="Default">
-      <node ref="U2" pin="13" pinfunction="SDA/SDI/SDIO" pintype="unspecified"/>
+      <node ref="U1" pin="13" pinfunction="SDA/SDI/SDIO" pintype="unspecified"/>
+      <node ref="U4" pin="41" pinfunction="PB5" pintype="bidirectional"/>
     </net>
     <net code="13" name="/Project Architecture/IMU/SDO" class="Default">
-      <node ref="U2" pin="12" pinfunction="SDO/ALT_ADDRESS" pintype="unspecified"/>
+      <node ref="U1" pin="12" pinfunction="SDO/ALT_ADDRESS" pintype="unspecified"/>
+      <node ref="U4" pin="40" pinfunction="PB4" pintype="bidirectional"/>
     </net>
-    <net code="15" name="/Project Architecture/MCU/CS*" class="Default">
-      <node ref="U1" pin="18" pinfunction="PB0" pintype="bidirectional"/>
-    </net>
-    <net code="16" name="/Project Architecture/MCU/INT" class="Default">
-      <node ref="U1" pin="19" pinfunction="PB1" pintype="bidirectional"/>
-    </net>
-    <net code="17" name="/Project Architecture/MCU/NRST" class="Default">
-      <node ref="U1" pin="7" pinfunction="PF2" pintype="bidirectional"/>
-    </net>
-    <net code="18" name="/Project Architecture/MCU/SCL" class="Default">
-      <node ref="R1" pin="2" pintype="passive"/>
-      <node ref="U1" pin="31" pinfunction="PA10" pintype="bidirectional"/>
-    </net>
-    <net code="19" name="/Project Architecture/MCU/SCLK" class="Default">
-      <node ref="U1" pin="39" pinfunction="PB3" pintype="bidirectional"/>
-    </net>
-    <net code="20" name="/Project Architecture/MCU/SDA" class="Default">
-      <node ref="R2" pin="2" pintype="passive"/>
-      <node ref="U1" pin="32" pinfunction="PA11" pintype="bidirectional"/>
-    </net>
-    <net code="21" name="/Project Architecture/MCU/SDI" class="Default">
-      <node ref="U1" pin="41" pinfunction="PB5" pintype="bidirectional"/>
-    </net>
-    <net code="22" name="/Project Architecture/MCU/SDO" class="Default">
-      <node ref="U1" pin="40" pinfunction="PB4" pintype="bidirectional"/>
-    </net>
-    <net code="23" name="/Project Architecture/MCU/SWCLK" class="Default">
-      <node ref="U1" pin="37" pinfunction="PA14" pintype="bidirectional"/>
-    </net>
-    <net code="24" name="/Project Architecture/MCU/SWDIO" class="Default">
-      <node ref="U1" pin="34" pinfunction="PA13" pintype="bidirectional"/>
-    </net>
-    <net code="30" name="GND" class="Default">
+    <net code="16" name="GND" class="Default">
       <node ref="C1" pin="2" pintype="passive"/>
       <node ref="C10" pin="2" pintype="passive"/>
-      <node ref="C11" pin="2" pintype="unspecified"/>
-      <node ref="C12" pin="2" pintype="unspecified"/>
+      <node ref="C11" pin="2" pintype="passive"/>
+      <node ref="C12" pin="2" pintype="passive"/>
       <node ref="C2" pin="2" pintype="passive"/>
       <node ref="C3" pin="2" pintype="passive"/>
       <node ref="C4" pin="2" pintype="passive"/>
@@ -960,133 +1358,137 @@
       <node ref="C7" pin="2" pintype="passive"/>
       <node ref="C8" pin="2" pintype="passive"/>
       <node ref="C9" pin="2" pintype="passive"/>
+      <node ref="H1" pin="1" pinfunction="1" pintype="input"/>
+      <node ref="H2" pin="1" pinfunction="1" pintype="input"/>
+      <node ref="H3" pin="1" pinfunction="1" pintype="input"/>
+      <node ref="H4" pin="1" pinfunction="1" pintype="input"/>
       <node ref="J1" pin="1" pinfunction="Pin_1" pintype="passive"/>
       <node ref="J2" pin="1" pinfunction="Pin_1" pintype="passive"/>
-      <node ref="U1" pin="23" pinfunction="VSS" pintype="power_in"/>
-      <node ref="U1" pin="35" pinfunction="VSS" pintype="passive"/>
-      <node ref="U1" pin="47" pinfunction="VSS" pintype="passive"/>
-      <node ref="U1" pin="49" pinfunction="VSS" pintype="passive"/>
-      <node ref="U1" pin="8" pinfunction="VSSA" pintype="power_in"/>
-      <node ref="U2" pin="2" pinfunction="GND" pintype="unspecified"/>
-      <node ref="U2" pin="4" pinfunction="GND" pintype="unspecified"/>
-      <node ref="U2" pin="5" pinfunction="GND" pintype="unspecified"/>
+      <node ref="U1" pin="2" pinfunction="GND" pintype="unspecified"/>
+      <node ref="U1" pin="4" pinfunction="GND" pintype="unspecified"/>
+      <node ref="U1" pin="5" pinfunction="GND" pintype="unspecified"/>
       <node ref="U3" pin="" pinfunction="GND" pintype="power_out"/>
+      <node ref="U4" pin="23" pinfunction="VSS" pintype="power_in"/>
+      <node ref="U4" pin="35" pinfunction="VSS" pintype="passive"/>
+      <node ref="U4" pin="47" pinfunction="VSS" pintype="passive"/>
+      <node ref="U4" pin="49" pinfunction="VSS" pintype="passive"/>
+      <node ref="U4" pin="8" pinfunction="VSSA" pintype="power_in"/>
     </net>
-    <net code="31" name="Net-(U2-VS)" class="Default">
+    <net code="17" name="Net-(U1-VS)" class="Default">
       <node ref="FB1" pin="2" pintype="passive"/>
-      <node ref="U2" pin="6" pinfunction="VS" pintype="unspecified"/>
+      <node ref="U1" pin="6" pinfunction="VS" pintype="unspecified"/>
     </net>
-    <net code="32" name="Net-(U3-LX1)" class="Default">
-      <node ref="L1" pin="1" pinfunction="1" pintype="unspecified"/>
-      <node ref="U3" pin="" pinfunction="LX1" pintype="power_in"/>
+    <net code="18" name="Net-(U3-LX1)" class="Default">
+      <node ref="L2" pin="1" pinfunction="1" pintype="passive"/>
+      <node ref="U3" pin="" pinfunction="LX1" pintype="unspecified"/>
     </net>
-    <net code="33" name="Net-(U3-LX2)" class="Default">
-      <node ref="L1" pin="2" pinfunction="2" pintype="unspecified"/>
-      <node ref="U3" pin="" pinfunction="LX2" pintype="power_in"/>
+    <net code="19" name="Net-(U3-LX2)" class="Default">
+      <node ref="L2" pin="2" pinfunction="2" pintype="passive"/>
+      <node ref="U3" pin="" pinfunction="LX2" pintype="unspecified"/>
     </net>
-    <net code="34" name="VBUS" class="Default">
-      <node ref="C11" pin="1" pintype="unspecified"/>
+    <net code="20" name="VBUS" class="Default">
+      <node ref="C11" pin="1" pintype="passive"/>
       <node ref="J1" pin="2" pinfunction="Pin_2" pintype="passive"/>
       <node ref="U3" pin="" pinfunction="VIN" pintype="power_in"/>
     </net>
-    <net code="35" name="unconnected-(U1A-PA0-Pad10)" class="Default">
-      <node ref="U1" pin="10" pinfunction="PA0" pintype="bidirectional+no_connect"/>
+    <net code="21" name="unconnected-(U1-INT2-Pad9)" class="Default">
+      <node ref="U1" pin="9" pinfunction="INT2" pintype="unspecified"/>
     </net>
-    <net code="36" name="unconnected-(U1A-PA1-Pad11)" class="Default">
-      <node ref="U1" pin="11" pinfunction="PA1" pintype="bidirectional+no_connect"/>
+    <net code="22" name="unconnected-(U1-NC-Pad10)" class="Default">
+      <node ref="U1" pin="10" pinfunction="NC" pintype="unspecified+no_connect"/>
     </net>
-    <net code="37" name="unconnected-(U1A-PA2-Pad12)" class="Default">
-      <node ref="U1" pin="12" pinfunction="PA2" pintype="bidirectional+no_connect"/>
+    <net code="23" name="unconnected-(U1-RESERVED-Pad3)" class="Default">
+      <node ref="U1" pin="3" pinfunction="RESERVED" pintype="unspecified+no_connect"/>
     </net>
-    <net code="38" name="unconnected-(U1A-PA3-Pad13)" class="Default">
-      <node ref="U1" pin="13" pinfunction="PA3" pintype="bidirectional+no_connect"/>
+    <net code="24" name="unconnected-(U1-RESERVED-Pad11)" class="Default">
+      <node ref="U1" pin="11" pinfunction="RESERVED" pintype="unspecified+no_connect"/>
     </net>
-    <net code="39" name="unconnected-(U1A-PA4-Pad14)" class="Default">
-      <node ref="U1" pin="14" pinfunction="PA4" pintype="bidirectional+no_connect"/>
+    <net code="25" name="unconnected-(U4A-PA0-Pad10)" class="Default">
+      <node ref="U4" pin="10" pinfunction="PA0" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="40" name="unconnected-(U1A-PA5-Pad15)" class="Default">
-      <node ref="U1" pin="15" pinfunction="PA5" pintype="bidirectional+no_connect"/>
+    <net code="26" name="unconnected-(U4A-PA1-Pad11)" class="Default">
+      <node ref="U4" pin="11" pinfunction="PA1" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="41" name="unconnected-(U1A-PA6-Pad16)" class="Default">
-      <node ref="U1" pin="16" pinfunction="PA6" pintype="bidirectional+no_connect"/>
+    <net code="27" name="unconnected-(U4A-PA2-Pad12)" class="Default">
+      <node ref="U4" pin="12" pinfunction="PA2" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="42" name="unconnected-(U1A-PA7-Pad17)" class="Default">
-      <node ref="U1" pin="17" pinfunction="PA7" pintype="bidirectional+no_connect"/>
+    <net code="28" name="unconnected-(U4A-PA3-Pad13)" class="Default">
+      <node ref="U4" pin="13" pinfunction="PA3" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="43" name="unconnected-(U1A-PA8-Pad29)" class="Default">
-      <node ref="U1" pin="29" pinfunction="PA8" pintype="bidirectional+no_connect"/>
+    <net code="29" name="unconnected-(U4A-PA4-Pad14)" class="Default">
+      <node ref="U4" pin="14" pinfunction="PA4" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="44" name="unconnected-(U1A-PA9-Pad30)" class="Default">
-      <node ref="U1" pin="30" pinfunction="PA9" pintype="bidirectional+no_connect"/>
+    <net code="30" name="unconnected-(U4A-PA5-Pad15)" class="Default">
+      <node ref="U4" pin="15" pinfunction="PA5" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="45" name="unconnected-(U1A-PA12-Pad33)" class="Default">
-      <node ref="U1" pin="33" pinfunction="PA12" pintype="bidirectional+no_connect"/>
+    <net code="31" name="unconnected-(U4A-PA6-Pad16)" class="Default">
+      <node ref="U4" pin="16" pinfunction="PA6" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="46" name="unconnected-(U1A-PA15-Pad38)" class="Default">
-      <node ref="U1" pin="38" pinfunction="PA15" pintype="bidirectional+no_connect"/>
+    <net code="32" name="unconnected-(U4A-PA7-Pad17)" class="Default">
+      <node ref="U4" pin="17" pinfunction="PA7" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="47" name="unconnected-(U1A-PB2-Pad20)" class="Default">
-      <node ref="U1" pin="20" pinfunction="PB2" pintype="bidirectional+no_connect"/>
+    <net code="33" name="unconnected-(U4A-PA8-Pad29)" class="Default">
+      <node ref="U4" pin="29" pinfunction="PA8" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="48" name="unconnected-(U1A-PB6-Pad42)" class="Default">
-      <node ref="U1" pin="42" pinfunction="PB6" pintype="bidirectional+no_connect"/>
+    <net code="34" name="unconnected-(U4A-PA9-Pad30)" class="Default">
+      <node ref="U4" pin="30" pinfunction="PA9" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="49" name="unconnected-(U1A-PB7-Pad43)" class="Default">
-      <node ref="U1" pin="43" pinfunction="PB7" pintype="bidirectional+no_connect"/>
+    <net code="35" name="unconnected-(U4A-PA12-Pad33)" class="Default">
+      <node ref="U4" pin="33" pinfunction="PA12" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="50" name="unconnected-(U1A-PB8-Pad45)" class="Default">
-      <node ref="U1" pin="45" pinfunction="PB8" pintype="bidirectional+no_connect"/>
+    <net code="36" name="unconnected-(U4A-PA15-Pad38)" class="Default">
+      <node ref="U4" pin="38" pinfunction="PA15" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="51" name="unconnected-(U1A-PB9-Pad46)" class="Default">
-      <node ref="U1" pin="46" pinfunction="PB9" pintype="bidirectional+no_connect"/>
+    <net code="37" name="unconnected-(U4A-PB2-Pad20)" class="Default">
+      <node ref="U4" pin="20" pinfunction="PB2" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="52" name="unconnected-(U1A-PB10-Pad21)" class="Default">
-      <node ref="U1" pin="21" pinfunction="PB10" pintype="bidirectional+no_connect"/>
+    <net code="38" name="unconnected-(U4A-PB6-Pad42)" class="Default">
+      <node ref="U4" pin="42" pinfunction="PB6" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="53" name="unconnected-(U1A-PB11-Pad22)" class="Default">
-      <node ref="U1" pin="22" pinfunction="PB11" pintype="bidirectional+no_connect"/>
+    <net code="39" name="unconnected-(U4A-PB7-Pad43)" class="Default">
+      <node ref="U4" pin="43" pinfunction="PB7" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="54" name="unconnected-(U1A-PB12-Pad25)" class="Default">
-      <node ref="U1" pin="25" pinfunction="PB12" pintype="bidirectional+no_connect"/>
+    <net code="40" name="unconnected-(U4A-PB8-Pad45)" class="Default">
+      <node ref="U4" pin="45" pinfunction="PB8" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="55" name="unconnected-(U1A-PB13-Pad26)" class="Default">
-      <node ref="U1" pin="26" pinfunction="PB13" pintype="bidirectional+no_connect"/>
+    <net code="41" name="unconnected-(U4A-PB9-Pad46)" class="Default">
+      <node ref="U4" pin="46" pinfunction="PB9" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="56" name="unconnected-(U1A-PB14-Pad27)" class="Default">
-      <node ref="U1" pin="27" pinfunction="PB14" pintype="bidirectional+no_connect"/>
+    <net code="42" name="unconnected-(U4A-PB10-Pad21)" class="Default">
+      <node ref="U4" pin="21" pinfunction="PB10" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="57" name="unconnected-(U1A-PB15-Pad28)" class="Default">
-      <node ref="U1" pin="28" pinfunction="PB15" pintype="bidirectional+no_connect"/>
+    <net code="43" name="unconnected-(U4A-PB11-Pad22)" class="Default">
+      <node ref="U4" pin="22" pinfunction="PB11" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="58" name="unconnected-(U1A-PC13-Pad2)" class="Default">
-      <node ref="U1" pin="2" pinfunction="PC13" pintype="bidirectional+no_connect"/>
+    <net code="44" name="unconnected-(U4A-PB12-Pad25)" class="Default">
+      <node ref="U4" pin="25" pinfunction="PB12" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="59" name="unconnected-(U1A-PC14-Pad3)" class="Default">
-      <node ref="U1" pin="3" pinfunction="PC14" pintype="bidirectional+no_connect"/>
+    <net code="45" name="unconnected-(U4A-PB13-Pad26)" class="Default">
+      <node ref="U4" pin="26" pinfunction="PB13" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="60" name="unconnected-(U1A-PC15-Pad4)" class="Default">
-      <node ref="U1" pin="4" pinfunction="PC15" pintype="bidirectional+no_connect"/>
+    <net code="46" name="unconnected-(U4A-PB14-Pad27)" class="Default">
+      <node ref="U4" pin="27" pinfunction="PB14" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="61" name="unconnected-(U1A-PF0-Pad5)" class="Default">
-      <node ref="U1" pin="5" pinfunction="PF0" pintype="bidirectional+no_connect"/>
+    <net code="47" name="unconnected-(U4A-PB15-Pad28)" class="Default">
+      <node ref="U4" pin="28" pinfunction="PB15" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="62" name="unconnected-(U1A-PF1-Pad6)" class="Default">
-      <node ref="U1" pin="6" pinfunction="PF1" pintype="bidirectional+no_connect"/>
+    <net code="48" name="unconnected-(U4A-PC13-Pad2)" class="Default">
+      <node ref="U4" pin="2" pinfunction="PC13" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="63" name="unconnected-(U1A-PF3-Pad44)" class="Default">
-      <node ref="U1" pin="44" pinfunction="PF3" pintype="bidirectional+no_connect"/>
+    <net code="49" name="unconnected-(U4A-PC14-Pad3)" class="Default">
+      <node ref="U4" pin="3" pinfunction="PC14" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="64" name="unconnected-(U2-INT2-Pad9)" class="Default">
-      <node ref="U2" pin="9" pinfunction="INT2" pintype="unspecified"/>
+    <net code="50" name="unconnected-(U4A-PC15-Pad4)" class="Default">
+      <node ref="U4" pin="4" pinfunction="PC15" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="65" name="unconnected-(U2-NC-Pad10)" class="Default">
-      <node ref="U2" pin="10" pinfunction="NC" pintype="unspecified+no_connect"/>
+    <net code="51" name="unconnected-(U4A-PF0-Pad5)" class="Default">
+      <node ref="U4" pin="5" pinfunction="PF0" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="66" name="unconnected-(U2-RESERVED-Pad3)" class="Default">
-      <node ref="U2" pin="3" pinfunction="RESERVED" pintype="unspecified+no_connect"/>
+    <net code="52" name="unconnected-(U4A-PF1-Pad6)" class="Default">
+      <node ref="U4" pin="6" pinfunction="PF1" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="67" name="unconnected-(U2-RESERVED-Pad11)" class="Default">
-      <node ref="U2" pin="11" pinfunction="RESERVED" pintype="unspecified+no_connect"/>
+    <net code="53" name="unconnected-(U4A-PF3-Pad44)" class="Default">
+      <node ref="U4" pin="44" pinfunction="PF3" pintype="bidirectional+no_connect"/>
     </net>
   </nets>
 </export>
