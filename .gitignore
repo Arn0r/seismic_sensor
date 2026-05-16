@@ -18,6 +18,7 @@ kibot_*.kicad_pro
 /.github/.DS_Store
 /notes/
 sym-lib-table
+fp-lib-table
 
 # OS generated files #
 ######################
@@ -31,4 +32,4 @@ Thumbs.db
 
 # dev files #
 #############
-/Calculations/.dir-locals.el
+.dir-locals.el

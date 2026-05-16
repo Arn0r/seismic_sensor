@@ -416,9 +416,9 @@
 		)
 		(uuid fb962045-e3ad-427d-8e13-7189ce103507)
 	)
-	(text "+??V"
+	(text "2.6V - 4.3V"
 		(exclude_from_sim no)
-		(at 49.53 76.2 0)
+		(at 45.212 76.2 0)
 		(effects
 			(font
 				(face "Times New Roman")
@@ -431,7 +431,7 @@
 		)
 		(uuid "101bf075-2779-4382-8921-8033e4839d29")
 	)
-	(text "+??V"
+	(text "+3.3V"
 		(exclude_from_sim no)
 		(at 129.54 76.2 0)
 		(effects
@@ -476,7 +476,7 @@
 		)
 		(uuid "ad6e3829-3684-4af1-9a28-ced841b0c880")
 	)
-	(text "+??V"
+	(text "+3.3V"
 		(exclude_from_sim no)
 		(at 120.65 76.2 0)
 		(effects
@@ -632,14 +632,14 @@
 		)
 		(uuid "15dd005a-2a1f-436c-a9b8-4953c7e00daf")
 	)
-	(text_box "Block\nDescription"
+	(text_box "Buck-Boost Converter"
 		(exclude_from_sim no)
 		(at 73.66 82.55 0)
 		(size 25.4 10.16)
 		(margins 1.7144 1.7144 1.7144 1.7144)
 		(stroke
 			(width -0.0001)
-			(type default)
+			(type solid)
 		)
 		(fill
 			(type none)
@@ -1400,14 +1400,14 @@
 		)
 		(uuid "c774310f-dfe3-45db-be98-953f7da6465f")
 	)
-	(text_box "Page #"
+	(text_box "Page 6"
 		(exclude_from_sim no)
 		(at 62.23 66.04 0)
 		(size 13.97 5.08)
 		(margins 1.7144 1.7144 1.7144 1.7144)
 		(stroke
 			(width -0.0001)
-			(type default)
+			(type solid)
 		)
 		(fill
 			(type none)
